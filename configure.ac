@@ -49,29 +49,29 @@ AC_MSG_RESULT($ac_cv_gnu_plus_plus_98)
 
 AM_CONDITIONAL([SUPPORTS_GNU_PLUS_PLUS_98], [test "x$ac_cv_gnu_plus_plus_98" = xyes])
 
-# check if the compiler supports -std=gnu++11
-AC_MSG_CHECKING(for -std=gnu++11 support)
+# check if the compiler supports -std=gnu++14
+AC_MSG_CHECKING(for -std=gnu++14 support)
 old_cxxflags=$CXXFLAGS
-CXXFLAGS="${CXXFLAGS} -std=gnu++11 -Wall -Werror"
-AC_CACHE_VAL(ac_cv_gnu_plus_plus_11,
+CXXFLAGS="${CXXFLAGS} -std=gnu++14 -Wall -Werror"
+AC_CACHE_VAL(ac_cv_gnu_plus_plus_14,
   AC_COMPILE_IFELSE(
      [AC_LANG_PROGRAM([], [])],
-     [ac_cv_gnu_plus_plus_11=yes],
-     [ac_cv_gnu_plus_plus_11=no])
+     [ac_cv_gnu_plus_plus_14=yes],
+     [ac_cv_gnu_plus_plus_14=no])
 )
 CXXFLAGS=$old_cxxflags
-AC_MSG_RESULT($ac_cv_gnu_plus_plus_11)
+AC_MSG_RESULT($ac_cv_gnu_plus_plus_14)
 
-AM_CONDITIONAL([SUPPORTS_GNU_PLUS_PLUS_11], [test "x$ac_cv_gnu_plus_plus_11" = xyes])
+AM_CONDITIONAL([SUPPORTS_GNU_PLUS_PLUS_14], [test "x$ac_cv_gnu_plus_plus_14" = xyes])
 
-# This checks whether random needs gnu++11 or not, it doesn't set HAVE_RANDOM
+# This checks whether random needs gnu++14 or not, it doesn't set HAVE_RANDOM
 # (as it's using AC_CHECK_HEADER not HEADERS), we do that later as normal
 # We don't pass the compiler flag to the preprocessor (CPPFLAGS) because that
 # variable is used by the C preprocessor too, and some of the pthread checks
 # test for C code, which complains it doesn't understand gnu++. We may
 # therefore generate some warnings in configure, but it should all work!
 ac_cv_header_random_98="no"
-ac_cv_header_random_11="no"
+ac_cv_header_random_14="no"
 
 AC_MSG_NOTICE([checking for random gnu++98 compatibility])
 old_cxxflags=$CXXFLAGS
@@ -86,16 +86,16 @@ AC_CHECK_HEADER(
 AS_UNSET([ac_cv_header_random])
 CXXFLAGS=$old_cxxflags
 
-AS_IF([test "x$ac_cv_gnu_plus_plus_11" = xyes],
-      [AC_MSG_NOTICE([checking for random gnu++11 compatibility])
+AS_IF([test "x$ac_cv_gnu_plus_plus_14" = xyes],
+      [AC_MSG_NOTICE([checking for random gnu++14 compatibility])
        old_cxxflags=$CXXFLAGS
-       CXXFLAGS="${CXXFLAGS} -std=gnu++11 -Wall -Werror"
+       CXXFLAGS="${CXXFLAGS} -std=gnu++14 -Wall -Werror"
        # Manually purge the cache
        AS_UNSET([ac_cv_header_random])
        AC_CHECK_HEADER(
           [random],
-          [ac_cv_header_random_11=yes],
-          [ac_cv_header_random_11=no])
+          [ac_cv_header_random_14=yes],
+          [ac_cv_header_random_14=no])
        # Manually purge the cache
        AS_UNSET([ac_cv_header_random])
        CXXFLAGS=$old_cxxflags])
@@ -107,11 +107,11 @@ AS_IF([test "x$ac_cv_gnu_plus_plus_11" = xyes],
 #       If no unit tests, force to gnu++98
 #       Else we have unit tests
 #         If cppunit < 1.14.0, force to gnu++98
-#         Else turn off deprecation messages for std::auto_ptr and run gnu++11
-#     Else assume we have protobuf >= 3.6 (later checks will confirm that for certain), turn off deprecation messages for std::auto_ptr and run gnu++11
-#   Else turn off deprecation messages for std::auto_ptr and run gnu++11
-require_gnu_plus_plus_11="no"
-AS_IF([test "x$ac_cv_gnu_plus_plus_11" = xyes],
+#         Else turn off deprecation messages for std::auto_ptr and run gnu++14
+#     Else assume we have protobuf >= 3.6 (later checks will confirm that for certain), turn off deprecation messages for std::auto_ptr and run gnu++14
+#   Else turn off deprecation messages for std::auto_ptr and run gnu++14
+require_gnu_plus_plus_14="no"
+AS_IF([test "x$ac_cv_gnu_plus_plus_14" = xyes],
       [AS_IF([test "x$ac_cv_gnu_plus_plus_98" = xyes],
              [AS_IF([test "x$ac_cv_header_random_98" = xyes],
                     [PKG_CHECK_MODULES([PROTOBUF1], [protobuf < 3.6],
@@ -120,19 +120,19 @@ AS_IF([test "x$ac_cv_gnu_plus_plus_11" = xyes],
                                               [PKG_CHECK_MODULES([CPPUNIT1], [cppunit < 1.14.0],
                                                                  [CXXFLAGS="$CXXFLAGS -std=gnu++98"],
                                                                  [PKG_CHECK_MODULES([CPPUNIT2], [cppunit >= 1.14.0],
-                                                                                    [require_gnu_plus_plus_11="yes"],
+                                                                                    [require_gnu_plus_plus_14="yes"],
                                                                                     [AC_MSG_WARN([OLA requires std::auto_ptr support.])])
                                                                  ])
                                               ])
                                        ],
-                                       [require_gnu_plus_plus_11="yes"])
+                                       [require_gnu_plus_plus_14="yes"])
                     ],
-                    [require_gnu_plus_plus_11="yes"])
+                    [require_gnu_plus_plus_14="yes"])
              ])
       ])
-AS_IF([test "x$require_gnu_plus_plus_11" = xyes],
-      [CXXFLAGS="$CXXFLAGS -std=gnu++11"])
-AM_CONDITIONAL([GNU_PLUS_PLUS_11_DEPRECATIONS], [test "x$require_gnu_plus_plus_11" = xyes])
+AS_IF([test "x$require_gnu_plus_plus_14" = xyes],
+      [CXXFLAGS="$CXXFLAGS -std=gnu++14"])
+AM_CONDITIONAL([GNU_PLUS_PLUS_11_DEPRECATIONS], [test "x$require_gnu_plus_plus_14" = xyes])
 
 # Checks for header files.
 AC_HEADER_DIRENT
