@@ -49,10 +49,10 @@ AC_MSG_RESULT($ac_cv_gnu_plus_plus_98)
 
 AM_CONDITIONAL([SUPPORTS_GNU_PLUS_PLUS_98], [test "x$ac_cv_gnu_plus_plus_98" = xyes])
 
-# check if the compiler supports -std=gnu++14
-AC_MSG_CHECKING(for -std=gnu++14 support)
+# check if the compiler supports -std=gnu++17
+AC_MSG_CHECKING(for -std=gnu++17 support)
 old_cxxflags=$CXXFLAGS
-CXXFLAGS="${CXXFLAGS} -std=gnu++14 -Wall -Werror"
+CXXFLAGS="${CXXFLAGS} -std=gnu++17 -Wall -Werror"
 AC_CACHE_VAL(ac_cv_gnu_plus_plus_14,
   AC_COMPILE_IFELSE(
      [AC_LANG_PROGRAM([], [])],
@@ -64,7 +64,7 @@ AC_MSG_RESULT($ac_cv_gnu_plus_plus_14)
 
 AM_CONDITIONAL([SUPPORTS_GNU_PLUS_PLUS_14], [test "x$ac_cv_gnu_plus_plus_14" = xyes])
 
-# This checks whether random needs gnu++14 or not, it doesn't set HAVE_RANDOM
+# This checks whether random needs gnu++17 or not, it doesn't set HAVE_RANDOM
 # (as it's using AC_CHECK_HEADER not HEADERS), we do that later as normal
 # We don't pass the compiler flag to the preprocessor (CPPFLAGS) because that
 # variable is used by the C preprocessor too, and some of the pthread checks
@@ -87,9 +87,9 @@ AS_UNSET([ac_cv_header_random])
 CXXFLAGS=$old_cxxflags
 
 AS_IF([test "x$ac_cv_gnu_plus_plus_14" = xyes],
-      [AC_MSG_NOTICE([checking for random gnu++14 compatibility])
+      [AC_MSG_NOTICE([checking for random gnu++17 compatibility])
        old_cxxflags=$CXXFLAGS
-       CXXFLAGS="${CXXFLAGS} -std=gnu++14 -Wall -Werror"
+       CXXFLAGS="${CXXFLAGS} -std=gnu++17 -Wall -Werror"
        # Manually purge the cache
        AS_UNSET([ac_cv_header_random])
        AC_CHECK_HEADER(
@@ -107,9 +107,9 @@ AS_IF([test "x$ac_cv_gnu_plus_plus_14" = xyes],
 #       If no unit tests, force to gnu++98
 #       Else we have unit tests
 #         If cppunit < 1.14.0, force to gnu++98
-#         Else turn off deprecation messages for std::auto_ptr and run gnu++14
-#     Else assume we have protobuf >= 3.6 (later checks will confirm that for certain), turn off deprecation messages for std::auto_ptr and run gnu++14
-#   Else turn off deprecation messages for std::auto_ptr and run gnu++14
+#         Else turn off deprecation messages for std::auto_ptr and run gnu++17
+#     Else assume we have protobuf >= 3.6 (later checks will confirm that for certain), turn off deprecation messages for std::auto_ptr and run gnu++17
+#   Else turn off deprecation messages for std::auto_ptr and run gnu++17
 require_gnu_plus_plus_14="no"
 AS_IF([test "x$ac_cv_gnu_plus_plus_14" = xyes],
       [AS_IF([test "x$ac_cv_gnu_plus_plus_98" = xyes],
@@ -131,7 +131,7 @@ AS_IF([test "x$ac_cv_gnu_plus_plus_14" = xyes],
              ])
       ])
 AS_IF([test "x$require_gnu_plus_plus_14" = xyes],
-      [CXXFLAGS="$CXXFLAGS -std=gnu++14"])
+      [CXXFLAGS="$CXXFLAGS -std=gnu++17"])
 AM_CONDITIONAL([GNU_PLUS_PLUS_11_DEPRECATIONS], [test "x$require_gnu_plus_plus_14" = xyes])
 
 # Checks for header files.
