@@ -172,8 +172,8 @@ class BaseWidgetFactory : public WidgetFactory {
  private:
   const std::string m_name;
 
-  BaseWidgetFactory<WidgetType>(const BaseWidgetFactory<WidgetType> &) = delete;
-  const BaseWidgetFactory<WidgetType> &operator=(const BaseWidgetFactory<WidgetType> &) = delete;
+  BaseWidgetFactory(const BaseWidgetFactory &) = delete;
+  const BaseWidgetFactory &operator=(const BaseWidgetFactory &) = delete;
 };
 
 template <typename WidgetType>

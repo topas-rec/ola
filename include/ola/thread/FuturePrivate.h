@@ -89,8 +89,8 @@ class FutureImpl {
   bool m_is_set;
   T m_value;
 
-  FutureImpl<T>(const FutureImpl<T> &) = delete;
-  const FutureImpl<T> &operator=(const FutureImpl<T> &) = delete;
+  FutureImpl(const FutureImpl &) = delete;
+  const FutureImpl &operator=(const FutureImpl &) = delete;
 };
 
 /**
@@ -153,8 +153,8 @@ class FutureImpl<void> {
   unsigned int m_ref_count;
   bool m_is_set;
 
-  FutureImpl<void>(const FutureImpl<void> &) = delete;
-  const FutureImpl<void> &operator=(const FutureImpl<void> &) = delete;
+  FutureImpl(const FutureImpl &) = delete;
+  const FutureImpl &operator=(const FutureImpl &) = delete;
 };
 
 }  // namespace thread
