@@ -60,7 +60,8 @@ class JaRuleDevice: public Device {
   ola::usb::JaRuleWidget *m_widget;  // not owned
   const std::string m_device_id;
 
-  DISALLOW_COPY_AND_ASSIGN(JaRuleDevice);
+  JaRuleDevice(const JaRuleDevice &) = delete;
+  const JaRuleDevice &operator=(const JaRuleDevice &) = delete;
 };
 }  // namespace usbdmx
 }  // namespace plugin

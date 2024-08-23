@@ -106,7 +106,8 @@ class SimpleE133Device {
   void SocketUnhealthy(IPV4Address ip_address);
   void SocketClosed();
 
-  DISALLOW_COPY_AND_ASSIGN(SimpleE133Device);
+  SimpleE133Device(const SimpleE133Device &) = delete;
+  const SimpleE133Device &operator=(const SimpleE133Device &) = delete;
 };
 
 

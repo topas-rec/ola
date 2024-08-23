@@ -80,7 +80,8 @@ class PersonalityCollection {
  private:
     const PersonalityList m_personalities;
 
-    DISALLOW_COPY_AND_ASSIGN(PersonalityCollection);
+    PersonalityCollection(const PersonalityCollection &) = delete;
+  const PersonalityCollection &operator=(const PersonalityCollection &) = delete;
 };
 
 
@@ -104,7 +105,8 @@ class PersonalityManager {
     const PersonalityCollection *m_personalities;
     uint8_t m_active_personality;
 
-    DISALLOW_COPY_AND_ASSIGN(PersonalityManager);
+    PersonalityManager(const PersonalityManager &) = delete;
+  const PersonalityManager &operator=(const PersonalityManager &) = delete;
 };
 }  // namespace rdm
 }  // namespace ola

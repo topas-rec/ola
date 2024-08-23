@@ -135,7 +135,8 @@ class PluginAdaptor: public ola::io::SelectServerInterface {
   class PortBrokerInterface *m_port_broker;
   const std::string *m_instance_name;
 
-  DISALLOW_COPY_AND_ASSIGN(PluginAdaptor);
+  PluginAdaptor(const PluginAdaptor &) = delete;
+  const PluginAdaptor &operator=(const PluginAdaptor &) = delete;
 };
 }  // namespace ola
 #endif  // INCLUDE_OLAD_PLUGINADAPTOR_H_

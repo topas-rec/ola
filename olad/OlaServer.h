@@ -226,7 +226,8 @@ class OlaServer : public ola::rpc::RpcSessionHandlerInterface {
   static const char UNIVERSE_PREFERENCES[];
   static const unsigned int K_HOUSEKEEPING_TIMEOUT_MS;
 
-  DISALLOW_COPY_AND_ASSIGN(OlaServer);
+  OlaServer(const OlaServer &) = delete;
+  const OlaServer &operator=(const OlaServer &) = delete;
 };
 }  // namespace ola
 #endif  // OLAD_OLASERVER_H_

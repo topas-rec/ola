@@ -355,7 +355,8 @@ class DMXCProjectsNodleU1AsyncUsbReceiver : public AsyncUsbReceiver {
   unsigned int m_mode;
   uint8_t m_packet[DATABLOCK_SIZE];
 
-  DISALLOW_COPY_AND_ASSIGN(DMXCProjectsNodleU1AsyncUsbReceiver);
+  DMXCProjectsNodleU1AsyncUsbReceiver(const DMXCProjectsNodleU1AsyncUsbReceiver &) = delete;
+  const DMXCProjectsNodleU1AsyncUsbReceiver &operator=(const DMXCProjectsNodleU1AsyncUsbReceiver &) = delete;
 };
 
 bool DMXCProjectsNodleU1AsyncUsbReceiver::PerformTransfer() {
@@ -424,7 +425,8 @@ class DMXCProjectsNodleU1AsyncUsbSender : public AsyncUsbSender {
     return (SubmitTransfer() == 0);
   }
 
-  DISALLOW_COPY_AND_ASSIGN(DMXCProjectsNodleU1AsyncUsbSender);
+  DMXCProjectsNodleU1AsyncUsbSender(const DMXCProjectsNodleU1AsyncUsbSender &) = delete;
+  const DMXCProjectsNodleU1AsyncUsbSender &operator=(const DMXCProjectsNodleU1AsyncUsbSender &) = delete;
 };
 
 bool DMXCProjectsNodleU1AsyncUsbSender::PerformTransfer(

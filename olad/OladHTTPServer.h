@@ -201,7 +201,8 @@ class OladHTTPServer: public ola::http::OlaHTTPServer {
   static const char K_PRIORITY_VALUE_SUFFIX[];
   static const char K_PRIORITY_MODE_SUFFIX[];
 
-  DISALLOW_COPY_AND_ASSIGN(OladHTTPServer);
+  OladHTTPServer(const OladHTTPServer &) = delete;
+  const OladHTTPServer &operator=(const OladHTTPServer &) = delete;
 };
 }  // namespace ola
 #endif  // OLAD_OLADHTTPSERVER_H_

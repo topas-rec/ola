@@ -103,7 +103,8 @@ class Client {
   std::map<unsigned int, DmxSource> m_data_map;
   ola::rdm::UID m_uid;
 
-  DISALLOW_COPY_AND_ASSIGN(Client);
+  Client(const Client &) = delete;
+  const Client &operator=(const Client &) = delete;
 };
 }  // namespace ola
 #endif  // OLAD_PLUGIN_API_CLIENT_H_

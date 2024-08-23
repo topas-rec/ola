@@ -176,7 +176,8 @@ class RootPidStore {
   const PidDescriptor *InternalESTANameLookup(
       const std::string &pid_name) const;
 
-  DISALLOW_COPY_AND_ASSIGN(RootPidStore);
+  RootPidStore(const RootPidStore &) = delete;
+  const RootPidStore &operator=(const RootPidStore &) = delete;
 };
 
 
@@ -235,7 +236,8 @@ class PidStore {
   PidMap m_pid_by_value;
   PidNameMap m_pid_by_name;
 
-  DISALLOW_COPY_AND_ASSIGN(PidStore);
+  PidStore(const PidStore &) = delete;
+  const PidStore &operator=(const PidStore &) = delete;
 };
 
 
@@ -300,7 +302,8 @@ class PidDescriptor {
   bool RequestValid(uint16_t sub_device,
                     const sub_device_validator &validator) const;
 
-  DISALLOW_COPY_AND_ASSIGN(PidDescriptor);
+  PidDescriptor(const PidDescriptor &) = delete;
+  const PidDescriptor &operator=(const PidDescriptor &) = delete;
 };
 }  // namespace rdm
 }  // namespace ola

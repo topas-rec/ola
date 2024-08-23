@@ -311,7 +311,8 @@ class JsonString: public JsonLeafValue {
  private:
   const std::string m_value;
 
-  DISALLOW_COPY_AND_ASSIGN(JsonString);
+  JsonString(const JsonString &) = delete;
+  const JsonString &operator=(const JsonString &) = delete;
 };
 
 
@@ -435,7 +436,8 @@ class JsonUInt: public JsonNumber {
  private:
   const unsigned int m_value;
 
-  DISALLOW_COPY_AND_ASSIGN(JsonUInt);
+  JsonUInt(const JsonUInt &) = delete;
+  const JsonUInt &operator=(const JsonUInt &) = delete;
 };
 
 
@@ -500,7 +502,8 @@ class JsonInt: public JsonNumber {
  private:
   const int m_value;
 
-  DISALLOW_COPY_AND_ASSIGN(JsonInt);
+  JsonInt(const JsonInt &) = delete;
+  const JsonInt &operator=(const JsonInt &) = delete;
 };
 
 
@@ -567,7 +570,8 @@ class JsonUInt64: public JsonNumber {
  private:
   const uint64_t m_value;
 
-  DISALLOW_COPY_AND_ASSIGN(JsonUInt64);
+  JsonUInt64(const JsonUInt64 &) = delete;
+  const JsonUInt64 &operator=(const JsonUInt64 &) = delete;
 };
 
 
@@ -634,7 +638,8 @@ class JsonInt64: public JsonNumber {
  private:
   const int64_t m_value;
 
-  DISALLOW_COPY_AND_ASSIGN(JsonInt64);
+  JsonInt64(const JsonInt64 &) = delete;
+  const JsonInt64 &operator=(const JsonInt64 &) = delete;
 };
 
 
@@ -758,7 +763,8 @@ class JsonDouble: public JsonNumber {
   double m_value;
   std::string m_as_string;
 
-  DISALLOW_COPY_AND_ASSIGN(JsonDouble);
+  JsonDouble(const JsonDouble &) = delete;
+  const JsonDouble &operator=(const JsonDouble &) = delete;
 };
 
 
@@ -801,7 +807,8 @@ class JsonBool: public JsonLeafValue {
  private:
   const bool m_value;
 
-  DISALLOW_COPY_AND_ASSIGN(JsonBool);
+  JsonBool(const JsonBool &) = delete;
+  const JsonBool &operator=(const JsonBool &) = delete;
 };
 
 
@@ -832,7 +839,8 @@ class JsonNull: public JsonLeafValue {
    * @endsection
    */
  private:
-  DISALLOW_COPY_AND_ASSIGN(JsonNull);
+  JsonNull(const JsonNull &) = delete;
+  const JsonNull &operator=(const JsonNull &) = delete;
 };
 
 
@@ -874,7 +882,8 @@ class JsonRawValue: public JsonLeafValue {
  private:
   const std::string m_value;
 
-  DISALLOW_COPY_AND_ASSIGN(JsonRawValue);
+  JsonRawValue(const JsonRawValue &) = delete;
+  const JsonRawValue &operator=(const JsonRawValue &) = delete;
 };
 
 
@@ -1022,7 +1031,8 @@ class JsonObject: public JsonValue {
   typedef std::map<std::string, JsonValue*> MemberMap;
   MemberMap m_members;
 
-  DISALLOW_COPY_AND_ASSIGN(JsonObject);
+  JsonObject(const JsonObject &) = delete;
+  const JsonObject &operator=(const JsonObject &) = delete;
 };
 
 
@@ -1205,7 +1215,8 @@ class JsonArray: public JsonValue {
   // true if this array contains a nested object or array
   bool m_complex_type;
 
-  DISALLOW_COPY_AND_ASSIGN(JsonArray);
+  JsonArray(const JsonArray &) = delete;
+  const JsonArray &operator=(const JsonArray &) = delete;
 };
 
 

@@ -122,7 +122,8 @@ class NonBlockingSender {
   void PerformWrite();
   void AssociateIfRequired();
 
-  DISALLOW_COPY_AND_ASSIGN(NonBlockingSender);
+  NonBlockingSender(const NonBlockingSender &) = delete;
+  const NonBlockingSender &operator=(const NonBlockingSender &) = delete;
 };
 }  // namespace io
 }  // namespace ola

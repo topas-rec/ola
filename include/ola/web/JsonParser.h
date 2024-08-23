@@ -120,7 +120,8 @@ class JsonParser : public JsonParserInterface {
   std::stack<JsonObject*> m_object_stack;
 
   void AddValue(JsonValue *value);
-  DISALLOW_COPY_AND_ASSIGN(JsonParser);
+  JsonParser(const JsonParser &) = delete;
+  const JsonParser &operator=(const JsonParser &) = delete;
 };
 /**@}*/
 }  // namespace web

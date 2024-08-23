@@ -814,7 +814,8 @@ class Controller {
     return str.str();
   }
 
-  DISALLOW_COPY_AND_ASSIGN(Controller);
+  Controller(const Controller &) = delete;
+  const Controller &operator=(const Controller &) = delete;
 };
 
 void ParseUID(const string &uid_str, UID *uid) {

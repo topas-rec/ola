@@ -47,7 +47,8 @@ class TokenBucket {
     unsigned int m_max;
     TimeStamp m_last;
 
-    DISALLOW_COPY_AND_ASSIGN(TokenBucket);
+    TokenBucket(const TokenBucket &) = delete;
+  const TokenBucket &operator=(const TokenBucket &) = delete;
 };
 }  // namespace ola
 #endif  // INCLUDE_OLAD_TOKENBUCKET_H_

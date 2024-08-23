@@ -60,7 +60,8 @@ class GenericDevice: public Device {
   const std::string m_device_id;
   std::auto_ptr<class GenericOutputPort> m_port;
 
-  DISALLOW_COPY_AND_ASSIGN(GenericDevice);
+  GenericDevice(const GenericDevice &) = delete;
+  const GenericDevice &operator=(const GenericDevice &) = delete;
 };
 }  // namespace usbdmx
 }  // namespace plugin

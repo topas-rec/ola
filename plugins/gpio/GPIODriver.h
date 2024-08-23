@@ -127,7 +127,8 @@ class GPIODriver : private ola::thread::Thread {
 
   static const char GPIO_BASE_DIR[];
 
-  DISALLOW_COPY_AND_ASSIGN(GPIODriver);
+  GPIODriver(const GPIODriver &) = delete;
+  const GPIODriver &operator=(const GPIODriver &) = delete;
 };
 }  // namespace gpio
 }  // namespace plugin

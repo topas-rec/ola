@@ -319,7 +319,8 @@ class OlaClient {
  private:
   std::auto_ptr<class OlaClientCore> m_core;
 
-  DISALLOW_COPY_AND_ASSIGN(OlaClient);
+  OlaClient(const OlaClient &) = delete;
+  const OlaClient &operator=(const OlaClient &) = delete;
 };
 }  // namespace client
 }  // namespace ola

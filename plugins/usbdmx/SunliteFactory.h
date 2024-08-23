@@ -53,7 +53,8 @@ class SunliteFactory : public BaseWidgetFactory<Sunlite> {
   static const uint16_t FULL_PRODUCT_ID;
   static const uint16_t VENDOR_ID;
 
-  DISALLOW_COPY_AND_ASSIGN(SunliteFactory);
+  SunliteFactory(const SunliteFactory &) = delete;
+  const SunliteFactory &operator=(const SunliteFactory &) = delete;
 };
 }  // namespace usbdmx
 }  // namespace plugin

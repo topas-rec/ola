@@ -165,7 +165,8 @@ class Plugin: public AbstractPlugin {
  private:
   bool m_enabled;  // are we running
 
-  DISALLOW_COPY_AND_ASSIGN(Plugin);
+  Plugin(const Plugin &) = delete;
+  const Plugin &operator=(const Plugin &) = delete;
 };
 }  // namespace ola
 

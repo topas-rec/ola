@@ -181,7 +181,8 @@ class Flag : public BaseFlag {
   T m_default;
   T m_value;
 
-  DISALLOW_COPY_AND_ASSIGN(Flag);
+  Flag(const Flag &) = delete;
+  const Flag &operator=(const Flag &) = delete;
 };
 
 /**
@@ -245,7 +246,8 @@ class Flag<bool> : public BaseFlag {
 
   static const char NO_PREFIX[];
 
-  DISALLOW_COPY_AND_ASSIGN(Flag);
+  Flag(const Flag &) = delete;
+  const Flag &operator=(const Flag &) = delete;
 };
 
 /**
@@ -293,7 +295,8 @@ class Flag<std::string> : public BaseFlag {
   std::string m_default;
   std::string m_value;
 
-  DISALLOW_COPY_AND_ASSIGN(Flag);
+  Flag(const Flag &) = delete;
+  const Flag &operator=(const Flag &) = delete;
 };
 
 /**
@@ -341,7 +344,8 @@ class FlagRegistry {
   void PrintFlags(std::vector<std::string> *lines);
   void PrintManPageFlags(std::vector<OptionPair> *lines);
 
-  DISALLOW_COPY_AND_ASSIGN(FlagRegistry);
+  FlagRegistry(const FlagRegistry &) = delete;
+  const FlagRegistry &operator=(const FlagRegistry &) = delete;
 };
 
 /**
@@ -364,7 +368,8 @@ class FlagRegisterer {
   }
 
  private:
-  DISALLOW_COPY_AND_ASSIGN(FlagRegisterer);
+  FlagRegisterer(const FlagRegisterer &) = delete;
+  const FlagRegisterer &operator=(const FlagRegisterer &) = delete;
 };
 
 /** @} */

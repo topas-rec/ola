@@ -37,7 +37,8 @@
  *       Foo() { ... }
  *
  *     private:
- *       DISALLOW_COPY_AND_ASSIGN(Foo);
+ *       Foo(const Foo &) = delete;
+  const Foo &operator=(const Foo &) = delete;
  *     };
  *   @endcode
  */

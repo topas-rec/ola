@@ -192,7 +192,8 @@ class JaRuleWidgetPort {
 
   static const unsigned int ENDPOINT_TIMEOUT_MS = 1000;
 
-  DISALLOW_COPY_AND_ASSIGN(JaRuleWidgetPort);
+  JaRuleWidgetPort(const JaRuleWidgetPort &) = delete;
+  const JaRuleWidgetPort &operator=(const JaRuleWidgetPort &) = delete;
 };
 }  // namespace usb
 }  // namespace ola

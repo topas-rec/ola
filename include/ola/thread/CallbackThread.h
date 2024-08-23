@@ -59,7 +59,8 @@ class CallbackThread : public Thread {
  private:
     VoidThreadCallback *m_callback;
 
-    DISALLOW_COPY_AND_ASSIGN(CallbackThread);
+    CallbackThread(const CallbackThread &) = delete;
+  const CallbackThread &operator=(const CallbackThread &) = delete;
 };
 }  // namespace thread
 }  // namespace ola

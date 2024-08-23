@@ -443,7 +443,8 @@ class OlaClientCore: public ola::proto::OlaClientService {
 
   static const char NOT_CONNECTED_ERROR[];
 
-  DISALLOW_COPY_AND_ASSIGN(OlaClientCore);
+  OlaClientCore(const OlaClientCore &) = delete;
+  const OlaClientCore &operator=(const OlaClientCore &) = delete;
 };
 
 }  // namespace client

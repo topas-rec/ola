@@ -145,7 +145,8 @@ class AdvancedTCPConnector {
   void AttemptConnection(const IPPortPair &key, ConnectionInfo *state);
   void AbortConnection(ConnectionInfo *state);
 
-  DISALLOW_COPY_AND_ASSIGN(AdvancedTCPConnector);
+  AdvancedTCPConnector(const AdvancedTCPConnector &) = delete;
+  const AdvancedTCPConnector &operator=(const AdvancedTCPConnector &) = delete;
 };
 }  // namespace network
 }  // namespace ola

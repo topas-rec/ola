@@ -272,7 +272,8 @@ class BasicInputPort: public InputPort {
   const PluginAdaptor *m_plugin_adaptor;
   bool m_supports_rdm;
 
-  DISALLOW_COPY_AND_ASSIGN(BasicInputPort);
+  BasicInputPort(const BasicInputPort &) = delete;
+  const BasicInputPort &operator=(const BasicInputPort &) = delete;
 };
 
 
@@ -359,7 +360,8 @@ class BasicOutputPort: public OutputPort {
   AbstractDevice *m_device;
   bool m_supports_rdm;
 
-  DISALLOW_COPY_AND_ASSIGN(BasicOutputPort);
+  BasicOutputPort(const BasicOutputPort &) = delete;
+  const BasicOutputPort &operator=(const BasicOutputPort &) = delete;
 };
 
 

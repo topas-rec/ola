@@ -145,7 +145,8 @@ class JaRulePortHandleImpl
                          const ola::rdm::UIDSet &uids);
   CommandClass GetCommandFromRequest(const ola::rdm::RDMRequest *request);
 
-  DISALLOW_COPY_AND_ASSIGN(JaRulePortHandleImpl);
+  JaRulePortHandleImpl(const JaRulePortHandleImpl &) = delete;
+  const JaRulePortHandleImpl &operator=(const JaRulePortHandleImpl &) = delete;
 };
 }  // namespace usb
 }  // namespace ola

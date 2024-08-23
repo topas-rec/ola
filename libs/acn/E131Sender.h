@@ -53,7 +53,8 @@ class E131Sender {
   OutgoingUDPTransportImpl m_transport_impl;
   class RootSender *m_root_sender;
 
-  DISALLOW_COPY_AND_ASSIGN(E131Sender);
+  E131Sender(const E131Sender &) = delete;
+  const E131Sender &operator=(const E131Sender &) = delete;
 };
 }  // namespace acn
 }  // namespace ola

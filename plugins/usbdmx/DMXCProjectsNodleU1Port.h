@@ -62,7 +62,8 @@ class DMXCProjectsNodleU1InputPort: public BasicInputPort {
  private:
   class DMXCProjectsNodleU1* const m_widget;
 
-  DISALLOW_COPY_AND_ASSIGN(DMXCProjectsNodleU1InputPort);
+  DMXCProjectsNodleU1InputPort(const DMXCProjectsNodleU1InputPort &) = delete;
+  const DMXCProjectsNodleU1InputPort &operator=(const DMXCProjectsNodleU1InputPort &) = delete;
 };
 }  // namespace usbdmx
 }  // namespace plugin

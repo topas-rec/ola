@@ -376,7 +376,8 @@ class VellemanAsyncUsbSender : public AsyncUsbSender {
     return (SubmitTransfer() == 0);
   }
 
-  DISALLOW_COPY_AND_ASSIGN(VellemanAsyncUsbSender);
+  VellemanAsyncUsbSender(const VellemanAsyncUsbSender &) = delete;
+  const VellemanAsyncUsbSender &operator=(const VellemanAsyncUsbSender &) = delete;
 };
 
 bool VellemanAsyncUsbSender::PerformTransfer(const DmxBuffer &buffer) {

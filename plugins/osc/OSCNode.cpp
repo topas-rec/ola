@@ -49,7 +49,8 @@ class UnmanagedSocketDescriptor : public ola::io::UnmanagedFileDescriptor {
     ioctlsocket(fd, FIONBIO, &mode);
   }
  private:
-  DISALLOW_COPY_AND_ASSIGN(UnmanagedSocketDescriptor);
+  UnmanagedSocketDescriptor(const UnmanagedSocketDescriptor &) = delete;
+  const UnmanagedSocketDescriptor &operator=(const UnmanagedSocketDescriptor &) = delete;
 };
 #endif  // _WIN32
 

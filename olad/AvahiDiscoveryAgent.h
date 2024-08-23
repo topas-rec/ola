@@ -113,7 +113,8 @@ class AvahiDiscoveryAgent : public DiscoveryAgentInterface {
   static std::string ClientStateToString(AvahiClientState state);
   static std::string GroupStateToString(AvahiEntryGroupState state);
 
-  DISALLOW_COPY_AND_ASSIGN(AvahiDiscoveryAgent);
+  AvahiDiscoveryAgent(const AvahiDiscoveryAgent &) = delete;
+  const AvahiDiscoveryAgent &operator=(const AvahiDiscoveryAgent &) = delete;
 };
 }  // namespace ola
 #endif  // OLAD_AVAHIDISCOVERYAGENT_H_

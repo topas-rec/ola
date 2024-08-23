@@ -98,7 +98,8 @@ class ThreadedUsbSender: private ola::thread::Thread {
   ola::thread::Mutex m_data_mutex;
   ola::thread::Mutex m_term_mutex;
 
-  DISALLOW_COPY_AND_ASSIGN(ThreadedUsbSender);
+  ThreadedUsbSender(const ThreadedUsbSender &) = delete;
+  const ThreadedUsbSender &operator=(const ThreadedUsbSender &) = delete;
 };
 }  // namespace usbdmx
 }  // namespace plugin

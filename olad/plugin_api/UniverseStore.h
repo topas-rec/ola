@@ -107,7 +107,8 @@ class UniverseStore {
 
   static const unsigned int MINIMUM_RDM_DISCOVERY_INTERVAL;
 
-  DISALLOW_COPY_AND_ASSIGN(UniverseStore);
+  UniverseStore(const UniverseStore &) = delete;
+  const UniverseStore &operator=(const UniverseStore &) = delete;
 };
 }  // namespace ola
 #endif  // OLAD_PLUGIN_API_UNIVERSESTORE_H_

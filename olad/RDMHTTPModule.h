@@ -696,7 +696,8 @@ class RDMHTTPModule {
     static const char RESET_DEVICE_SECTION_NAME[];
     static const char TILT_INVERT_SECTION_NAME[];
 
-    DISALLOW_COPY_AND_ASSIGN(RDMHTTPModule);
+    RDMHTTPModule(const RDMHTTPModule &) = delete;
+  const RDMHTTPModule &operator=(const RDMHTTPModule &) = delete;
 };
 }  // namespace ola
 #endif  // OLAD_RDMHTTPMODULE_H_

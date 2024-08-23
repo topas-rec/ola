@@ -54,7 +54,8 @@ class AnymauDMXFactory : public BaseWidgetFactory<class AnymauDMX> {
   static const uint16_t PRODUCT_ID;
   static const uint16_t VENDOR_ID;
 
-  DISALLOW_COPY_AND_ASSIGN(AnymauDMXFactory);
+  AnymauDMXFactory(const AnymauDMXFactory &) = delete;
+  const AnymauDMXFactory &operator=(const AnymauDMXFactory &) = delete;
 };
 }  // namespace usbdmx
 }  // namespace plugin

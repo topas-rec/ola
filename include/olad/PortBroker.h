@@ -72,7 +72,8 @@ class PortBroker: public PortBrokerInterface {
 
     std::set<port_key> m_ports;
 
-    DISALLOW_COPY_AND_ASSIGN(PortBroker);
+    PortBroker(const PortBroker &) = delete;
+  const PortBroker &operator=(const PortBroker &) = delete;
 };
 }  // namespace ola
 #endif  // INCLUDE_OLAD_PORTBROKER_H_

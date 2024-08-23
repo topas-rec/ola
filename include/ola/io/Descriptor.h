@@ -260,7 +260,8 @@ class UnmanagedFileDescriptor: public BidirectionalFileDescriptor {
   DescriptorHandle m_handle;
 
  private:
-  DISALLOW_COPY_AND_ASSIGN(UnmanagedFileDescriptor);
+  UnmanagedFileDescriptor(const UnmanagedFileDescriptor &) = delete;
+  const UnmanagedFileDescriptor &operator=(const UnmanagedFileDescriptor &) = delete;
 };
 
 
@@ -427,7 +428,8 @@ class LoopbackDescriptor: public ConnectedDescriptor {
   DescriptorHandle m_handle_pair[2];
 
 
-  DISALLOW_COPY_AND_ASSIGN(LoopbackDescriptor);
+  LoopbackDescriptor(const LoopbackDescriptor &) = delete;
+  const LoopbackDescriptor &operator=(const LoopbackDescriptor &) = delete;
 };
 
 
@@ -480,7 +482,8 @@ class PipeDescriptor: public ConnectedDescriptor {
                  PipeDescriptor *other_end);
 
 
-  DISALLOW_COPY_AND_ASSIGN(PipeDescriptor);
+  PipeDescriptor(const PipeDescriptor &) = delete;
+  const PipeDescriptor &operator=(const PipeDescriptor &) = delete;
 };
 
 /**
@@ -529,7 +532,8 @@ class UnixSocket: public ConnectedDescriptor {
   UnixSocket *m_other_end;
   UnixSocket(int socket, UnixSocket *other_end);
 
-  DISALLOW_COPY_AND_ASSIGN(UnixSocket);
+  UnixSocket(const UnixSocket &) = delete;
+  const UnixSocket &operator=(const UnixSocket &) = delete;
 };
 
 /**
@@ -558,7 +562,8 @@ class DeviceDescriptor: public ConnectedDescriptor {
  private:
   DescriptorHandle m_handle;
 
-  DISALLOW_COPY_AND_ASSIGN(DeviceDescriptor);
+  DeviceDescriptor(const DeviceDescriptor &) = delete;
+  const DeviceDescriptor &operator=(const DeviceDescriptor &) = delete;
 };
 
 /**@}*/

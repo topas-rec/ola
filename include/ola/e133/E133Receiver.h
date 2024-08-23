@@ -142,7 +142,8 @@ class E133Receiver {
         const ola::acn::E133Header *e133_header,
         const std::string &raw_response);
 
-    DISALLOW_COPY_AND_ASSIGN(E133Receiver);
+    E133Receiver(const E133Receiver &) = delete;
+  const E133Receiver &operator=(const E133Receiver &) = delete;
 };
 }  // namespace e133
 }  // namespace ola

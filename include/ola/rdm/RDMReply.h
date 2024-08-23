@@ -147,7 +147,8 @@ struct RDMReply {
   std::auto_ptr<RDMResponse> m_response;
   RDMFrames m_frames;
 
-  DISALLOW_COPY_AND_ASSIGN(RDMReply);
+  RDMReply(const RDMReply &) = delete;
+  const RDMReply &operator=(const RDMReply &) = delete;
 };
 }  // namespace rdm
 }  // namespace ola

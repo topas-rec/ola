@@ -112,7 +112,8 @@ class DiscoveryAgentFactory {
   DiscoveryAgentInterface* New();
 
  private:
-  DISALLOW_COPY_AND_ASSIGN(DiscoveryAgentFactory);
+  DiscoveryAgentFactory(const DiscoveryAgentFactory &) = delete;
+  const DiscoveryAgentFactory &operator=(const DiscoveryAgentFactory &) = delete;
 };
 }  // namespace ola
 #endif  // OLAD_DISCOVERYAGENT_H_

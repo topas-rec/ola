@@ -99,7 +99,8 @@ class HTTPRequest {
 
   static const unsigned int K_POST_BUFFER_SIZE = 1024;
 
-  DISALLOW_COPY_AND_ASSIGN(HTTPRequest);
+  HTTPRequest(const HTTPRequest &) = delete;
+  const HTTPRequest &operator=(const HTTPRequest &) = delete;
 };
 
 
@@ -127,7 +128,8 @@ class HTTPResponse {
   HeadersMultiMap m_headers;
   unsigned int m_status_code;
 
-  DISALLOW_COPY_AND_ASSIGN(HTTPResponse);
+  HTTPResponse(const HTTPResponse &) = delete;
+  const HTTPResponse &operator=(const HTTPResponse &) = delete;
 };
 
 
@@ -266,7 +268,8 @@ class HTTPServer: public ola::thread::Thread {
   void InsertSocket(bool is_readable, bool is_writeable, int fd);
   void FreeSocket(DescriptorState *state);
 
-  DISALLOW_COPY_AND_ASSIGN(HTTPServer);
+  HTTPServer(const HTTPServer &) = delete;
+  const HTTPServer &operator=(const HTTPServer &) = delete;
 };
 }  // namespace http
 }  // namespace ola

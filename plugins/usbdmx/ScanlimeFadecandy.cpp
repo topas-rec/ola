@@ -295,7 +295,8 @@ class FadecandyAsyncUsbSender : public AsyncUsbSender {
  private:
   fadecandy_packet m_data_packets[PACKETS_PER_UPDATE];
 
-  DISALLOW_COPY_AND_ASSIGN(FadecandyAsyncUsbSender);
+  FadecandyAsyncUsbSender(const FadecandyAsyncUsbSender &) = delete;
+  const FadecandyAsyncUsbSender &operator=(const FadecandyAsyncUsbSender &) = delete;
 };
 
 libusb_device_handle* FadecandyAsyncUsbSender::SetupHandle() {

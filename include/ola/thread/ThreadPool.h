@@ -54,7 +54,8 @@ class ThreadPool {
 
   void JoinAllThreads();
 
-  DISALLOW_COPY_AND_ASSIGN(ThreadPool);
+  ThreadPool(const ThreadPool &) = delete;
+  const ThreadPool &operator=(const ThreadPool &) = delete;
 };
 }  // namespace thread
 }  // namespace ola

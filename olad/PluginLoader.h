@@ -62,7 +62,8 @@ class PluginLoader {
   class PluginAdaptor *m_plugin_adaptor;
 
  private:
-  DISALLOW_COPY_AND_ASSIGN(PluginLoader);
+  PluginLoader(const PluginLoader &) = delete;
+  const PluginLoader &operator=(const PluginLoader &) = delete;
 };
 }  // namespace ola
 #endif  // OLAD_PLUGINLOADER_H_

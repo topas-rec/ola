@@ -72,7 +72,8 @@ class SchemaErrorLogger {
   std::ostringstream m_extra_errors;
   JsonPointer *m_pointer;
 
-  DISALLOW_COPY_AND_ASSIGN(SchemaErrorLogger);
+  SchemaErrorLogger(const SchemaErrorLogger &) = delete;
+  const SchemaErrorLogger &operator=(const SchemaErrorLogger &) = delete;
 };
 }  // namespace web
 }  // namespace ola

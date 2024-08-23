@@ -98,7 +98,8 @@ class AsyncUsbSender: public AsyncUsbTransceiverBase {
   DmxBuffer m_tx_buffer;  // GUARDED_BY(m_mutex);
   bool m_pending_tx;  // GUARDED_BY(m_mutex);
 
-  DISALLOW_COPY_AND_ASSIGN(AsyncUsbSender);
+  AsyncUsbSender(const AsyncUsbSender &) = delete;
+  const AsyncUsbSender &operator=(const AsyncUsbSender &) = delete;
 };
 }  // namespace usbdmx
 }  // namespace plugin

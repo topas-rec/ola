@@ -135,7 +135,8 @@ class PointerTracker {
   JsonPointer *m_pointer;
   std::vector<Token> m_tokens;
 
-  DISALLOW_COPY_AND_ASSIGN(PointerTracker);
+  PointerTracker(const PointerTracker &) = delete;
+  const PointerTracker &operator=(const PointerTracker &) = delete;
 };
 }  // namespace web
 }  // namespace ola

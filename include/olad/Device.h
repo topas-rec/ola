@@ -157,7 +157,8 @@ class Device: public AbstractDevice {
   template <class PortClass>
   void GenericDeletePort(PortClass *p);
 
-  DISALLOW_COPY_AND_ASSIGN(Device);
+  Device(const Device &) = delete;
+  const Device &operator=(const Device &) = delete;
 };
 }  // namespace ola
 #endif  // INCLUDE_OLAD_DEVICE_H_

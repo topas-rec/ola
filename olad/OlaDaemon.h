@@ -106,7 +106,8 @@ class OlaDaemon {
   static const char GID_KEY[];
   static const char GROUP_NAME_KEY[];
 
-  DISALLOW_COPY_AND_ASSIGN(OlaDaemon);
+  OlaDaemon(const OlaDaemon &) = delete;
+  const OlaDaemon &operator=(const OlaDaemon &) = delete;
 };
 }  // namespace ola
 #endif  // OLAD_OLADAEMON_H_

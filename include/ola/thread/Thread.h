@@ -182,7 +182,8 @@ class Thread {
   Mutex m_mutex;  // protects m_running
   ConditionVariable m_condition;  // use to wait for the thread to start
 
-  DISALLOW_COPY_AND_ASSIGN(Thread);
+  Thread(const Thread &) = delete;
+  const Thread &operator=(const Thread &) = delete;
 };
 }  // namespace thread
 }  // namespace ola

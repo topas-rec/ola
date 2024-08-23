@@ -120,7 +120,8 @@ class SynchronousDMXCProjectsNodleU1: public DMXCProjectsNodleU1 {
   std::auto_ptr<class DMXCProjectsNodleU1ThreadedSender> m_sender;
   std::auto_ptr<class DMXCProjectsNodleU1ThreadedReceiver> m_receiver;
 
-  DISALLOW_COPY_AND_ASSIGN(SynchronousDMXCProjectsNodleU1);
+  SynchronousDMXCProjectsNodleU1(const SynchronousDMXCProjectsNodleU1 &) = delete;
+  const SynchronousDMXCProjectsNodleU1 &operator=(const SynchronousDMXCProjectsNodleU1 &) = delete;
 };
 
 /**
@@ -154,7 +155,8 @@ class AsynchronousDMXCProjectsNodleU1 : public DMXCProjectsNodleU1 {
   std::auto_ptr<class DMXCProjectsNodleU1AsyncUsbReceiver> m_receiver;
   DmxBuffer m_buffer;
 
-  DISALLOW_COPY_AND_ASSIGN(AsynchronousDMXCProjectsNodleU1);
+  AsynchronousDMXCProjectsNodleU1(const AsynchronousDMXCProjectsNodleU1 &) = delete;
+  const AsynchronousDMXCProjectsNodleU1 &operator=(const AsynchronousDMXCProjectsNodleU1 &) = delete;
 };
 }  // namespace usbdmx
 }  // namespace plugin

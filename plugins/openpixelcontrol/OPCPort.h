@@ -62,7 +62,8 @@ class OPCInputPort: public BasicInputPort {
 
   void NewData(uint8_t command, const uint8_t *data, unsigned int length);
 
-  DISALLOW_COPY_AND_ASSIGN(OPCInputPort);
+  OPCInputPort(const OPCInputPort &) = delete;
+  const OPCInputPort &operator=(const OPCInputPort &) = delete;
 };
 
 /**
@@ -89,7 +90,8 @@ class OPCOutputPort: public BasicOutputPort {
   class OPCClient* const m_client;
   const uint8_t m_channel;
 
-  DISALLOW_COPY_AND_ASSIGN(OPCOutputPort);
+  OPCOutputPort(const OPCOutputPort &) = delete;
+  const OPCOutputPort &operator=(const OPCOutputPort &) = delete;
 };
 }  // namespace openpixelcontrol
 }  // namespace plugin

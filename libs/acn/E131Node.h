@@ -254,7 +254,8 @@ class E131Node {
   static const uint16_t DISCOVERY_UNIVERSE_ID = 64214;
   static const uint16_t DISCOVERY_PAGE_SIZE = 512;
 
-  DISALLOW_COPY_AND_ASSIGN(E131Node);
+  E131Node(const E131Node &) = delete;
+  const E131Node &operator=(const E131Node &) = delete;
 };
 }  // namespace acn
 }  // namespace ola

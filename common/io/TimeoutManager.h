@@ -193,7 +193,8 @@ class TimeoutManager {
   event_queue_t m_events;
   std::set<ola::thread::timeout_id> m_removed_timeouts;
 
-  DISALLOW_COPY_AND_ASSIGN(TimeoutManager);
+  TimeoutManager(const TimeoutManager &) = delete;
+  const TimeoutManager &operator=(const TimeoutManager &) = delete;
 };
 }  // namespace io
 }  // namespace ola

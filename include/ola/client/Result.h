@@ -75,7 +75,8 @@ class Result {
  private:
   const std::string m_error;
 
-  DISALLOW_COPY_AND_ASSIGN(Result);
+  Result(const Result &) = delete;
+  const Result &operator=(const Result &) = delete;
 };
 }  // namespace client
 }  // namespace ola

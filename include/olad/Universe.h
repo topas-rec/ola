@@ -214,7 +214,8 @@ class Universe: public ola::rdm::RDMControllerInterface {
     bool GenericContainsPort(PortClass *port,
                              const std::vector<PortClass*> &ports) const;
 
-    DISALLOW_COPY_AND_ASSIGN(Universe);
+    Universe(const Universe &) = delete;
+  const Universe &operator=(const Universe &) = delete;
 };
 }  // namespace ola
 #endif  // INCLUDE_OLAD_UNIVERSE_H_

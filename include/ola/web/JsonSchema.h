@@ -318,7 +318,8 @@ class StringValidator : public BaseValidator {
 
   void ExtendSchema(JsonObject *schema) const;
 
-  DISALLOW_COPY_AND_ASSIGN(StringValidator);
+  StringValidator(const StringValidator &) = delete;
+  const StringValidator &operator=(const StringValidator &) = delete;
 };
 
 /**
@@ -331,7 +332,8 @@ class BoolValidator : public BaseValidator {
   void Visit(const JsonBool &value) { m_is_valid = CheckEnums(value); }
 
  private:
-  DISALLOW_COPY_AND_ASSIGN(BoolValidator);
+  BoolValidator(const BoolValidator &) = delete;
+  const BoolValidator &operator=(const BoolValidator &) = delete;
 };
 
 /**
@@ -344,7 +346,8 @@ class NullValidator : public BaseValidator {
   void Visit(const JsonNull &value) { m_is_valid = CheckEnums(value); }
 
  private:
-  DISALLOW_COPY_AND_ASSIGN(NullValidator);
+  NullValidator(const NullValidator &) = delete;
+  const NullValidator &operator=(const NullValidator &) = delete;
 };
 
 /**
@@ -497,7 +500,8 @@ class IntegerValidator : public BaseValidator {
 
   void ExtendSchema(JsonObject *schema) const;
 
-  DISALLOW_COPY_AND_ASSIGN(IntegerValidator);
+  IntegerValidator(const IntegerValidator &) = delete;
+  const IntegerValidator &operator=(const IntegerValidator &) = delete;
 };
 
 
@@ -513,7 +517,8 @@ class NumberValidator : public IntegerValidator {
   void Visit(const JsonDouble&);
 
  private:
-  DISALLOW_COPY_AND_ASSIGN(NumberValidator);
+  NumberValidator(const NumberValidator &) = delete;
+  const NumberValidator &operator=(const NumberValidator &) = delete;
 };
 
 /**
@@ -614,7 +619,8 @@ class ObjectValidator : public BaseValidator, JsonObjectPropertyVisitor {
 
   void ExtendSchema(JsonObject *schema) const;
 
-  DISALLOW_COPY_AND_ASSIGN(ObjectValidator);
+  ObjectValidator(const ObjectValidator &) = delete;
+  const ObjectValidator &operator=(const ObjectValidator &) = delete;
 };
 
 /**
@@ -648,7 +654,8 @@ class ArrayValidator : public BaseValidator {
     std::auto_ptr<ValidatorInterface> m_validator;
     ValidatorList m_validator_list;
 
-    DISALLOW_COPY_AND_ASSIGN(Items);
+    Items(const Items &) = delete;
+  const Items &operator=(const Items &) = delete;
   };
 
   /**
@@ -673,7 +680,8 @@ class ArrayValidator : public BaseValidator {
     bool m_allowed;
     std::auto_ptr<ValidatorInterface> m_validator;
 
-    DISALLOW_COPY_AND_ASSIGN(AdditionalItems);
+    AdditionalItems(const AdditionalItems &) = delete;
+  const AdditionalItems &operator=(const AdditionalItems &) = delete;
   };
 
   struct Options {
@@ -736,13 +744,15 @@ class ArrayValidator : public BaseValidator {
     template <typename T>
     void ValidateItem(const T &item);
 
-    DISALLOW_COPY_AND_ASSIGN(ArrayElementValidator);
+    ArrayElementValidator(const ArrayElementValidator &) = delete;
+  const ArrayElementValidator &operator=(const ArrayElementValidator &) = delete;
   };
 
   void ExtendSchema(JsonObject *schema) const;
   ArrayElementValidator* ConstructElementValidator() const;
 
-  DISALLOW_COPY_AND_ASSIGN(ArrayValidator);
+  ArrayValidator(const ArrayValidator &) = delete;
+  const ArrayValidator &operator=(const ArrayValidator &) = delete;
 };
 
 
@@ -832,7 +842,8 @@ class AllOfValidator : public ConjunctionValidator {
   void Validate(const JsonValue &value);
 
  private:
-  DISALLOW_COPY_AND_ASSIGN(AllOfValidator);
+  AllOfValidator(const AllOfValidator &) = delete;
+  const AllOfValidator &operator=(const AllOfValidator &) = delete;
 };
 
 /**
@@ -854,7 +865,8 @@ class AnyOfValidator : public ConjunctionValidator {
   void Validate(const JsonValue &value);
 
  private:
-  DISALLOW_COPY_AND_ASSIGN(AnyOfValidator);
+  AnyOfValidator(const AnyOfValidator &) = delete;
+  const AnyOfValidator &operator=(const AnyOfValidator &) = delete;
 };
 
 /**
@@ -876,7 +888,8 @@ class OneOfValidator : public ConjunctionValidator {
   void Validate(const JsonValue &value);
 
  private:
-  DISALLOW_COPY_AND_ASSIGN(OneOfValidator);
+  OneOfValidator(const OneOfValidator &) = delete;
+  const OneOfValidator &operator=(const OneOfValidator &) = delete;
 };
 
 /**
@@ -940,7 +953,8 @@ class NotValidator : public BaseValidator {
 
   void ExtendSchema(JsonObject *schema) const;
 
-  DISALLOW_COPY_AND_ASSIGN(NotValidator);
+  NotValidator(const NotValidator &) = delete;
+  const NotValidator &operator=(const NotValidator &) = delete;
 };
 
 class SchemaDefinitions {
@@ -960,7 +974,8 @@ class SchemaDefinitions {
 
   SchemaMap m_validators;
 
-  DISALLOW_COPY_AND_ASSIGN(SchemaDefinitions);
+  SchemaDefinitions(const SchemaDefinitions &) = delete;
+  const SchemaDefinitions &operator=(const SchemaDefinitions &) = delete;
 };
 
 
@@ -1002,7 +1017,8 @@ class JsonSchema {
              ValidatorInterface *root_validator,
              SchemaDefinitions *schema_defs);
 
-  DISALLOW_COPY_AND_ASSIGN(JsonSchema);
+  JsonSchema(const JsonSchema &) = delete;
+  const JsonSchema &operator=(const JsonSchema &) = delete;
 };
 
 /**@}*/

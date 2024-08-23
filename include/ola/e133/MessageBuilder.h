@@ -69,7 +69,8 @@ class MessageBuilder {
     const string m_source_name;
     ola::io::MemoryBlockPool m_memory_pool;
 
-    DISALLOW_COPY_AND_ASSIGN(MessageBuilder);
+    MessageBuilder(const MessageBuilder &) = delete;
+  const MessageBuilder &operator=(const MessageBuilder &) = delete;
 };
 }  // namespace e133
 }  // namespace ola

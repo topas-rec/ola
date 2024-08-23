@@ -131,7 +131,8 @@ class StrictTypedParseContext : public ObjectParseContext {
  private:
   void ReportErrorForType(SchemaErrorLogger *logger, JsonType type);
 
-  DISALLOW_COPY_AND_ASSIGN(StrictTypedParseContext);
+  StrictTypedParseContext(const StrictTypedParseContext &) = delete;
+  const StrictTypedParseContext &operator=(const StrictTypedParseContext &) = delete;
 };
 
 /**
@@ -161,7 +162,8 @@ class DefinitionsParseContext : public StrictTypedParseContext {
   SchemaDefinitions *m_schema_defs;
   std::auto_ptr<SchemaParseContext> m_current_schema;
 
-  DISALLOW_COPY_AND_ASSIGN(DefinitionsParseContext);
+  DefinitionsParseContext(const DefinitionsParseContext &) = delete;
+  const DefinitionsParseContext &operator=(const DefinitionsParseContext &) = delete;
 };
 
 /**
@@ -297,7 +299,8 @@ class SchemaParseContext : public SchemaParseContextInterface {
                               JsonType type, JsonType expected_type1,
                               JsonType expected_type2);
 
-  DISALLOW_COPY_AND_ASSIGN(SchemaParseContext);
+  SchemaParseContext(const SchemaParseContext &) = delete;
+  const SchemaParseContext &operator=(const SchemaParseContext &) = delete;
 };
 
 
@@ -323,7 +326,8 @@ class PropertiesParseContext : public StrictTypedParseContext {
   SchemaDefinitions *m_schema_defs;
   SchemaMap m_property_contexts;
 
-  DISALLOW_COPY_AND_ASSIGN(PropertiesParseContext);
+  PropertiesParseContext(const PropertiesParseContext &) = delete;
+  const PropertiesParseContext &operator=(const PropertiesParseContext &) = delete;
 };
 
 
@@ -355,7 +359,8 @@ class ArrayOfSchemaContext : public StrictTypedParseContext {
   SchemaDefinitions *m_schema_defs;
   ItemSchemas m_item_schemas;
 
-  DISALLOW_COPY_AND_ASSIGN(ArrayOfSchemaContext);
+  ArrayOfSchemaContext(const ArrayOfSchemaContext &) = delete;
+  const ArrayOfSchemaContext &operator=(const ArrayOfSchemaContext &) = delete;
 };
 
 
@@ -380,7 +385,8 @@ class ArrayOfStringsContext : public StrictTypedParseContext {
  private:
   StringSet m_items;
 
-  DISALLOW_COPY_AND_ASSIGN(ArrayOfStringsContext);
+  ArrayOfStringsContext(const ArrayOfStringsContext &) = delete;
+  const ArrayOfStringsContext &operator=(const ArrayOfStringsContext &) = delete;
 };
 
 /**
@@ -413,7 +419,8 @@ class JsonValueContext : public SchemaParseContextInterface {
  private:
   JsonParser m_parser;
 
-  DISALLOW_COPY_AND_ASSIGN(JsonValueContext);
+  JsonValueContext(const JsonValueContext &) = delete;
+  const JsonValueContext &operator=(const JsonValueContext &) = delete;
 };
 
 /**
@@ -451,7 +458,8 @@ class ArrayOfJsonValuesContext : public SchemaParseContextInterface {
   void CheckForDuplicateAndAdd(SchemaErrorLogger *logger,
                                const JsonValue *value);
 
-  DISALLOW_COPY_AND_ASSIGN(ArrayOfJsonValuesContext);
+  ArrayOfJsonValuesContext(const ArrayOfJsonValuesContext &) = delete;
+  const ArrayOfJsonValuesContext &operator=(const ArrayOfJsonValuesContext &) = delete;
 };
 
 
@@ -488,7 +496,8 @@ class DependencyParseContext : public StrictTypedParseContext {
   PropertyDependencies m_property_dependencies;
   SchemaDependencies m_schema_dependencies;
 
-  DISALLOW_COPY_AND_ASSIGN(DependencyParseContext);
+  DependencyParseContext(const DependencyParseContext &) = delete;
+  const DependencyParseContext &operator=(const DependencyParseContext &) = delete;
 };
 }  // namespace web
 }  // namespace ola

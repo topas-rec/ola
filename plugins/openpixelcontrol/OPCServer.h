@@ -120,7 +120,8 @@ class OPCServer {
   void SocketReady(ola::network::TCPSocket *socket, RxState *rx_state);
   void SocketClosed(ola::network::TCPSocket *socket);
 
-  DISALLOW_COPY_AND_ASSIGN(OPCServer);
+  OPCServer(const OPCServer &) = delete;
+  const OPCServer &operator=(const OPCServer &) = delete;
 };
 }  // namespace openpixelcontrol
 }  // namespace plugin

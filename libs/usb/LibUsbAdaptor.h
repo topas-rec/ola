@@ -551,7 +551,8 @@ class SyncronousLibUsbAdaptor : public BaseLibUsbAdaptor {
   void Close(libusb_device_handle *usb_handle);
 
  private:
-  DISALLOW_COPY_AND_ASSIGN(SyncronousLibUsbAdaptor);
+  SyncronousLibUsbAdaptor(const SyncronousLibUsbAdaptor &) = delete;
+  const SyncronousLibUsbAdaptor &operator=(const SyncronousLibUsbAdaptor &) = delete;
 };
 
 /**
@@ -601,7 +602,8 @@ class AsyncronousLibUsbAdaptor : public BaseLibUsbAdaptor {
  private:
   class LibUsbThread *m_thread;
 
-  DISALLOW_COPY_AND_ASSIGN(AsyncronousLibUsbAdaptor);
+  AsyncronousLibUsbAdaptor(const AsyncronousLibUsbAdaptor &) = delete;
+  const AsyncronousLibUsbAdaptor &operator=(const AsyncronousLibUsbAdaptor &) = delete;
 };
 }  // namespace usb
 }  // namespace ola

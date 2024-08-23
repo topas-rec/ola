@@ -99,7 +99,8 @@ class CallbackRunner {
  private:
     CallbackClass *m_callback;
 
-    DISALLOW_COPY_AND_ASSIGN(CallbackRunner);
+    CallbackRunner(const CallbackRunner &) = delete;
+  const CallbackRunner &operator=(const CallbackRunner &) = delete;
 };
 
 /**

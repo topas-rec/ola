@@ -90,7 +90,8 @@ class SynchronousEurolitePro: public EurolitePro {
  private:
   std::auto_ptr<class EuroliteProThreadedSender> m_sender;
 
-  DISALLOW_COPY_AND_ASSIGN(SynchronousEurolitePro);
+  SynchronousEurolitePro(const SynchronousEurolitePro &) = delete;
+  const SynchronousEurolitePro &operator=(const SynchronousEurolitePro &) = delete;
 };
 
 /**
@@ -115,7 +116,8 @@ class AsynchronousEurolitePro: public EurolitePro {
  private:
   std::auto_ptr<class EuroliteProAsyncUsbSender> m_sender;
 
-  DISALLOW_COPY_AND_ASSIGN(AsynchronousEurolitePro);
+  AsynchronousEurolitePro(const AsynchronousEurolitePro &) = delete;
+  const AsynchronousEurolitePro &operator=(const AsynchronousEurolitePro &) = delete;
 };
 }  // namespace usbdmx
 }  // namespace plugin

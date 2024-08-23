@@ -90,7 +90,8 @@ class ShowNetNode {
     // off by 11.
     static const uint16_t MAGIC_INDEX_OFFSET = 11;
 
-    DISALLOW_COPY_AND_ASSIGN(ShowNetNode);
+    ShowNetNode(const ShowNetNode &) = delete;
+  const ShowNetNode &operator=(const ShowNetNode &) = delete;
 };
 }  // namespace shownet
 }  // namespace plugin

@@ -92,7 +92,8 @@ class DeviceState {
   auto_ptr<IncomingTCPTransport> in_transport;
 
  private:
-  DISALLOW_COPY_AND_ASSIGN(DeviceState);
+  DeviceState(const DeviceState &) = delete;
+  const DeviceState &operator=(const DeviceState &) = delete;
 };
 
 /**
@@ -142,7 +143,8 @@ class SimpleE133Controller {
 
   void SocketClosed(IPV4SocketAddress peer);
 
-  DISALLOW_COPY_AND_ASSIGN(SimpleE133Controller);
+  SimpleE133Controller(const SimpleE133Controller &) = delete;
+  const SimpleE133Controller &operator=(const SimpleE133Controller &) = delete;
 };
 
 SimpleE133Controller::SimpleE133Controller(const Options &options)

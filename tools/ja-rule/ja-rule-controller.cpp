@@ -223,7 +223,8 @@ class Controller {
     cout << "-------------------------" << endl;
   }
 
-  DISALLOW_COPY_AND_ASSIGN(Controller);
+  Controller(const Controller &) = delete;
+  const Controller &operator=(const Controller &) = delete;
 };
 
 /*

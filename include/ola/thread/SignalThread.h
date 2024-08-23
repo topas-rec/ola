@@ -67,7 +67,8 @@ class SignalThread : public ola::thread::Thread {
     bool AddSignals(sigset_t *signals);
     bool BlockSignal(int signal);
 
-    DISALLOW_COPY_AND_ASSIGN(SignalThread);
+    SignalThread(const SignalThread &) = delete;
+  const SignalThread &operator=(const SignalThread &) = delete;
 };
 }  // namespace thread
 }  // namespace ola

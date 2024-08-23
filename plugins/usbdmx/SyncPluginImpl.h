@@ -109,7 +109,8 @@ class SyncPluginImpl: public PluginImplInterface,  public WidgetObserver {
 
   bool StartAndRegisterDevice(class WidgetInterface *widget, Device *device);
 
-  DISALLOW_COPY_AND_ASSIGN(SyncPluginImpl);
+  SyncPluginImpl(const SyncPluginImpl &) = delete;
+  const SyncPluginImpl &operator=(const SyncPluginImpl &) = delete;
 };
 }  // namespace usbdmx
 }  // namespace plugin

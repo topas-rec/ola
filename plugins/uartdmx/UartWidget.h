@@ -98,7 +98,8 @@ class UartWidget {
    */
   static const int FAILED_OPEN = -1;
 
-  DISALLOW_COPY_AND_ASSIGN(UartWidget);
+  UartWidget(const UartWidget &) = delete;
+  const UartWidget &operator=(const UartWidget &) = delete;
 };
 }  // namespace uartdmx
 }  // namespace plugin

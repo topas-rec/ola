@@ -397,7 +397,8 @@ class ExportMap {
   std::map<std::string, IntMap*> m_int_map_variables;
   std::map<std::string, UIntMap*> m_uint_map_variables;
 
-  DISALLOW_COPY_AND_ASSIGN(ExportMap);
+  ExportMap(const ExportMap &) = delete;
+  const ExportMap &operator=(const ExportMap &) = delete;
 };
 }  // namespace ola
 #endif  // INCLUDE_OLA_EXPORTMAP_H_

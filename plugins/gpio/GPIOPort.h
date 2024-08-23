@@ -62,7 +62,8 @@ class GPIOOutputPort: public BasicOutputPort {
  private:
   std::auto_ptr<GPIODriver> m_driver;
 
-  DISALLOW_COPY_AND_ASSIGN(GPIOOutputPort);
+  GPIOOutputPort(const GPIOOutputPort &) = delete;
+  const GPIOOutputPort &operator=(const GPIOOutputPort &) = delete;
 };
 }  // namespace gpio
 }  // namespace plugin

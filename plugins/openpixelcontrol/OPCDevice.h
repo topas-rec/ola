@@ -63,7 +63,8 @@ class OPCServerDevice: public ola::Device {
   const ola::network::IPV4SocketAddress m_listen_addr;
   std::auto_ptr<class OPCServer> m_server;
 
-  DISALLOW_COPY_AND_ASSIGN(OPCServerDevice);
+  OPCServerDevice(const OPCServerDevice &) = delete;
+  const OPCServerDevice &operator=(const OPCServerDevice &) = delete;
 };
 
 class OPCClientDevice: public ola::Device {
@@ -93,7 +94,8 @@ class OPCClientDevice: public ola::Device {
   const ola::network::IPV4SocketAddress m_target;
   std::auto_ptr<class OPCClient> m_client;
 
-  DISALLOW_COPY_AND_ASSIGN(OPCClientDevice);
+  OPCClientDevice(const OPCClientDevice &) = delete;
+  const OPCClientDevice &operator=(const OPCClientDevice &) = delete;
 };
 }  // namespace openpixelcontrol
 }  // namespace plugin

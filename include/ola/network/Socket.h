@@ -228,7 +228,8 @@ class UDPSocketInterface: public ola::io::BidirectionalFileDescriptor {
   virtual bool SetTos(uint8_t tos) = 0;
 
  private:
-  DISALLOW_COPY_AND_ASSIGN(UDPSocketInterface);
+  UDPSocketInterface(const UDPSocketInterface &) = delete;
+  const UDPSocketInterface &operator=(const UDPSocketInterface &) = delete;
 };
 
 
@@ -290,7 +291,8 @@ class UDPSocket: public UDPSocketInterface {
   ola::io::DescriptorHandle m_handle;
   bool m_bound_to_port;
 
-  DISALLOW_COPY_AND_ASSIGN(UDPSocket);
+  UDPSocket(const UDPSocket &) = delete;
+  const UDPSocket &operator=(const UDPSocket &) = delete;
 };
 }  // namespace network
 }  // namespace ola

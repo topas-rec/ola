@@ -129,7 +129,8 @@ class AsyncUsbReceiver: public AsyncUsbTransceiverBase {
   DmxBuffer m_rx_buffer;  // GUARDED_BY(m_mutex);
   std::auto_ptr<Callback0<void> > m_receive_callback;
 
-  DISALLOW_COPY_AND_ASSIGN(AsyncUsbReceiver);
+  AsyncUsbReceiver(const AsyncUsbReceiver &) = delete;
+  const AsyncUsbReceiver &operator=(const AsyncUsbReceiver &) = delete;
 };
 }  // namespace usbdmx
 }  // namespace plugin

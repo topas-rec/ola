@@ -106,7 +106,8 @@ class ExecutorThread : public ola::thread::ExecutorInterface {
 
   void RunRemaining();
 
-  DISALLOW_COPY_AND_ASSIGN(ExecutorThread);
+  ExecutorThread(const ExecutorThread &) = delete;
+  const ExecutorThread &operator=(const ExecutorThread &) = delete;
 };
 
 }  // namespace thread

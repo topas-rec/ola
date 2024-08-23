@@ -137,7 +137,8 @@ class IPv4Validator: public Validator {
  private:
   bool m_empty_ok;
 
-  DISALLOW_COPY_AND_ASSIGN(IPv4Validator);
+  IPv4Validator(const IPv4Validator &) = delete;
+  const IPv4Validator &operator=(const IPv4Validator &) = delete;
 };
 
 
@@ -335,7 +336,8 @@ class Preferences {
   std::string m_preference_name;
 
  private:
-  DISALLOW_COPY_AND_ASSIGN(Preferences);
+  Preferences(const Preferences &) = delete;
+  const Preferences &operator=(const Preferences &) = delete;
 };
 
 

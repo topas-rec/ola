@@ -113,7 +113,8 @@ class HealthCheckedConnection {
     void UpdateReceiveTimer();
     void InternalHeartbeatTimeout();
 
-    DISALLOW_COPY_AND_ASSIGN(HealthCheckedConnection);
+    HealthCheckedConnection(const HealthCheckedConnection &) = delete;
+  const HealthCheckedConnection &operator=(const HealthCheckedConnection &) = delete;
 };
 }  // namespace network
 }  // namespace ola

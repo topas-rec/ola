@@ -172,7 +172,8 @@ class BaseWidgetFactory : public WidgetFactory {
  private:
   const std::string m_name;
 
-  DISALLOW_COPY_AND_ASSIGN(BaseWidgetFactory<WidgetType>);
+  BaseWidgetFactory<WidgetType>(const BaseWidgetFactory<WidgetType> &) = delete;
+  const BaseWidgetFactory<WidgetType> &operator=(const BaseWidgetFactory<WidgetType> &) = delete;
 };
 
 template <typename WidgetType>

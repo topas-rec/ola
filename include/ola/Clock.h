@@ -272,7 +272,8 @@ class Clock {
   virtual void CurrentTime(TimeStamp* timestamp) const;
 
  private:
-  DISALLOW_COPY_AND_ASSIGN(Clock);
+  Clock(const Clock &) = delete;
+  const Clock &operator=(const Clock &) = delete;
 };
 
 /**

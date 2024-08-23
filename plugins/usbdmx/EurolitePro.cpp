@@ -223,7 +223,8 @@ class EuroliteProAsyncUsbSender : public AsyncUsbSender {
  private:
   uint8_t m_tx_frame[EUROLITE_PRO_FRAME_SIZE];
 
-  DISALLOW_COPY_AND_ASSIGN(EuroliteProAsyncUsbSender);
+  EuroliteProAsyncUsbSender(const EuroliteProAsyncUsbSender &) = delete;
+  const EuroliteProAsyncUsbSender &operator=(const EuroliteProAsyncUsbSender &) = delete;
 };
 
 // AsynchronousEurolitePro

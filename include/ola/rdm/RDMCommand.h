@@ -223,7 +223,8 @@ class RDMCommand {
   static uint16_t CalculateChecksum(const uint8_t *data,
                                     unsigned int packet_length);
 
-  DISALLOW_COPY_AND_ASSIGN(RDMCommand);
+  RDMCommand(const RDMCommand &) = delete;
+  const RDMCommand &operator=(const RDMCommand &) = delete;
 };
 
 

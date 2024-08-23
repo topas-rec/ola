@@ -65,7 +65,8 @@ class GenericTCPSocketFactory: public TCPSocketFactoryInterface {
  private:
   NewSocketCallback *m_new_socket;
 
-  DISALLOW_COPY_AND_ASSIGN(GenericTCPSocketFactory);
+  GenericTCPSocketFactory(const GenericTCPSocketFactory &) = delete;
+  const GenericTCPSocketFactory &operator=(const GenericTCPSocketFactory &) = delete;
 };
 
 typedef GenericTCPSocketFactory<TCPSocket> TCPSocketFactory;

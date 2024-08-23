@@ -136,7 +136,8 @@ class PortManager {
   UniverseStore * const m_universe_store;
   PortBroker *m_broker;
 
-  DISALLOW_COPY_AND_ASSIGN(PortManager);
+  PortManager(const PortManager &) = delete;
+  const PortManager &operator=(const PortManager &) = delete;
 };
 }  // namespace ola
 #endif  // OLAD_PLUGIN_API_PORTMANAGER_H_

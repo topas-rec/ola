@@ -192,7 +192,8 @@ class SunliteAsyncUsbSender : public AsyncUsbSender {
  private:
   uint8_t m_packet[SUNLITE_PACKET_SIZE];
 
-  DISALLOW_COPY_AND_ASSIGN(SunliteAsyncUsbSender);
+  SunliteAsyncUsbSender(const SunliteAsyncUsbSender &) = delete;
+  const SunliteAsyncUsbSender &operator=(const SunliteAsyncUsbSender &) = delete;
 };
 
 // AsynchronousSunlite

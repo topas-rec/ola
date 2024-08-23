@@ -53,7 +53,8 @@ class GPIODevice: public ola::Device {
  private:
   const GPIODriver::Options m_options;
 
-  DISALLOW_COPY_AND_ASSIGN(GPIODevice);
+  GPIODevice(const GPIODevice &) = delete;
+  const GPIODevice &operator=(const GPIODevice &) = delete;
 };
 }  // namespace gpio
 }  // namespace plugin

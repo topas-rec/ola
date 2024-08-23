@@ -65,7 +65,8 @@ class UartDmxPlugin : public Plugin {
   static const char K_DEVICE[];
   static const char DEFAULT_DEVICE[];
 
-  DISALLOW_COPY_AND_ASSIGN(UartDmxPlugin);
+  UartDmxPlugin(const UartDmxPlugin &) = delete;
+  const UartDmxPlugin &operator=(const UartDmxPlugin &) = delete;
 };
 }  // namespace uartdmx
 }  // namespace plugin

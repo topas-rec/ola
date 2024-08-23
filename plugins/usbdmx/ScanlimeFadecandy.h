@@ -91,7 +91,8 @@ class SynchronousScanlimeFadecandy: public ScanlimeFadecandy {
  private:
   std::auto_ptr<class FadecandyThreadedSender> m_sender;
 
-  DISALLOW_COPY_AND_ASSIGN(SynchronousScanlimeFadecandy);
+  SynchronousScanlimeFadecandy(const SynchronousScanlimeFadecandy &) = delete;
+  const SynchronousScanlimeFadecandy &operator=(const SynchronousScanlimeFadecandy &) = delete;
 };
 
 /**
@@ -116,7 +117,8 @@ class AsynchronousScanlimeFadecandy : public ScanlimeFadecandy {
  private:
   std::auto_ptr<class FadecandyAsyncUsbSender> m_sender;
 
-  DISALLOW_COPY_AND_ASSIGN(AsynchronousScanlimeFadecandy);
+  AsynchronousScanlimeFadecandy(const AsynchronousScanlimeFadecandy &) = delete;
+  const AsynchronousScanlimeFadecandy &operator=(const AsynchronousScanlimeFadecandy &) = delete;
 };
 }  // namespace usbdmx
 }  // namespace plugin

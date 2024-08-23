@@ -83,7 +83,8 @@ class JsonPatchAddOp : public JsonPatchOp {
   JsonPointer m_pointer;
   std::auto_ptr<const JsonValue> m_value;
 
-  DISALLOW_COPY_AND_ASSIGN(JsonPatchAddOp);
+  JsonPatchAddOp(const JsonPatchAddOp &) = delete;
+  const JsonPatchAddOp &operator=(const JsonPatchAddOp &) = delete;
 };
 
 /**
@@ -104,7 +105,8 @@ class JsonPatchRemoveOp : public JsonPatchOp {
  private:
   const JsonPointer m_pointer;
 
-  DISALLOW_COPY_AND_ASSIGN(JsonPatchRemoveOp);
+  JsonPatchRemoveOp(const JsonPatchRemoveOp &) = delete;
+  const JsonPatchRemoveOp &operator=(const JsonPatchRemoveOp &) = delete;
 };
 
 /**
@@ -128,7 +130,8 @@ class JsonPatchReplaceOp : public JsonPatchOp {
   const JsonPointer m_pointer;
   std::auto_ptr<const JsonValue> m_value;
 
-  DISALLOW_COPY_AND_ASSIGN(JsonPatchReplaceOp);
+  JsonPatchReplaceOp(const JsonPatchReplaceOp &) = delete;
+  const JsonPatchReplaceOp &operator=(const JsonPatchReplaceOp &) = delete;
 };
 
 /**
@@ -152,7 +155,8 @@ class JsonPatchMoveOp : public JsonPatchOp {
   JsonPointer m_from;
   JsonPointer m_to;
 
-  DISALLOW_COPY_AND_ASSIGN(JsonPatchMoveOp);
+  JsonPatchMoveOp(const JsonPatchMoveOp &) = delete;
+  const JsonPatchMoveOp &operator=(const JsonPatchMoveOp &) = delete;
 };
 
 /**
@@ -176,7 +180,8 @@ class JsonPatchCopyOp : public JsonPatchOp {
   JsonPointer m_from;
   JsonPointer m_to;
 
-  DISALLOW_COPY_AND_ASSIGN(JsonPatchCopyOp);
+  JsonPatchCopyOp(const JsonPatchCopyOp &) = delete;
+  const JsonPatchCopyOp &operator=(const JsonPatchCopyOp &) = delete;
 };
 
 /**
@@ -195,7 +200,8 @@ class JsonPatchTestOp : public JsonPatchOp {
   JsonPointer m_pointer;
   std::auto_ptr<const JsonValue> m_value;
 
-  DISALLOW_COPY_AND_ASSIGN(JsonPatchTestOp);
+  JsonPatchTestOp(const JsonPatchTestOp &) = delete;
+  const JsonPatchTestOp &operator=(const JsonPatchTestOp &) = delete;
 };
 
 

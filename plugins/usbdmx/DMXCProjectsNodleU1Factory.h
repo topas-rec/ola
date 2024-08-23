@@ -60,7 +60,8 @@ class DMXCProjectsNodleU1Factory :
   static const uint16_t VENDOR_ID;
   static const uint16_t PRODUCT_ID;
 
-  DISALLOW_COPY_AND_ASSIGN(DMXCProjectsNodleU1Factory);
+  DMXCProjectsNodleU1Factory(const DMXCProjectsNodleU1Factory &) = delete;
+  const DMXCProjectsNodleU1Factory &operator=(const DMXCProjectsNodleU1Factory &) = delete;
 };
 }  // namespace usbdmx
 }  // namespace plugin

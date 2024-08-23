@@ -46,7 +46,8 @@ class OptionalItem {
   bool m_is_set;
   T m_value;
 
-  DISALLOW_COPY_AND_ASSIGN(OptionalItem);
+  OptionalItem(const OptionalItem &) = delete;
+  const OptionalItem &operator=(const OptionalItem &) = delete;
 };
 
 template <>

@@ -167,7 +167,8 @@ class DeviceManager {
   static const char PRIORITY_VALUE_SUFFIX[];
   static const char PRIORITY_MODE_SUFFIX[];
 
-  DISALLOW_COPY_AND_ASSIGN(DeviceManager);
+  DeviceManager(const DeviceManager &) = delete;
+  const DeviceManager &operator=(const DeviceManager &) = delete;
 };
 }  // namespace ola
 #endif  // OLAD_PLUGIN_API_DEVICEMANAGER_H_

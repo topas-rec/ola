@@ -56,7 +56,8 @@ class GenericOutputPort: public BasicOutputPort {
  private:
   class WidgetInterface* const m_widget;
 
-  DISALLOW_COPY_AND_ASSIGN(GenericOutputPort);
+  GenericOutputPort(const GenericOutputPort &) = delete;
+  const GenericOutputPort &operator=(const GenericOutputPort &) = delete;
 };
 }  // namespace usbdmx
 }  // namespace plugin

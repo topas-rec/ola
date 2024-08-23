@@ -116,7 +116,8 @@ class ThreadedUsbReceiver: private ola::thread::Thread {
   ola::thread::Mutex m_data_mutex;
   ola::thread::Mutex m_term_mutex;
 
-  DISALLOW_COPY_AND_ASSIGN(ThreadedUsbReceiver);
+  ThreadedUsbReceiver(const ThreadedUsbReceiver &) = delete;
+  const ThreadedUsbReceiver &operator=(const ThreadedUsbReceiver &) = delete;
 };
 }  // namespace usbdmx
 }  // namespace plugin

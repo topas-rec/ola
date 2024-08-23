@@ -50,7 +50,8 @@ class VellemanK8062Factory : public BaseWidgetFactory<class VellemanK8062> {
   static const uint16_t VENDOR_ID;
   static const uint16_t PRODUCT_ID;
 
-  DISALLOW_COPY_AND_ASSIGN(VellemanK8062Factory);
+  VellemanK8062Factory(const VellemanK8062Factory &) = delete;
+  const VellemanK8062Factory &operator=(const VellemanK8062Factory &) = delete;
 };
 }  // namespace usbdmx
 }  // namespace plugin

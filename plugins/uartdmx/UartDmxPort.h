@@ -59,7 +59,8 @@ class UartDmxOutputPort : public ola::BasicOutputPort {
   UartWidget *m_widget;
   UartDmxThread m_thread;
 
-  DISALLOW_COPY_AND_ASSIGN(UartDmxOutputPort);
+  UartDmxOutputPort(const UartDmxOutputPort &) = delete;
+  const UartDmxOutputPort &operator=(const UartDmxOutputPort &) = delete;
 };
 }  // namespace uartdmx
 }  // namespace plugin

@@ -102,7 +102,8 @@ class EPoller : public PollerInterface {
   static const int READ_FLAGS;
   static const unsigned int MAX_FREE_DESCRIPTORS;
 
-  DISALLOW_COPY_AND_ASSIGN(EPoller);
+  EPoller(const EPoller &) = delete;
+  const EPoller &operator=(const EPoller &) = delete;
 };
 }  // namespace io
 }  // namespace ola

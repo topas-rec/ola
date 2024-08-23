@@ -63,7 +63,8 @@ class TCPSocket: public ola::io::ConnectedDescriptor {
  private:
   ola::io::DescriptorHandle m_handle;
 
-  DISALLOW_COPY_AND_ASSIGN(TCPSocket);
+  TCPSocket(const TCPSocket &) = delete;
+  const TCPSocket &operator=(const TCPSocket &) = delete;
 };
 
 
@@ -89,7 +90,8 @@ class TCPAcceptingSocket: public ola::io::ReadFileDescriptor {
   ola::io::DescriptorHandle m_handle;
   class TCPSocketFactoryInterface *m_factory;
 
-  DISALLOW_COPY_AND_ASSIGN(TCPAcceptingSocket);
+  TCPAcceptingSocket(const TCPAcceptingSocket &) = delete;
+  const TCPAcceptingSocket &operator=(const TCPAcceptingSocket &) = delete;
 };
 }  // namespace network
 }  // namespace ola

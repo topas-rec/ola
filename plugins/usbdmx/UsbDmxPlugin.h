@@ -69,7 +69,8 @@ class UsbDmxPlugin: public ola::Plugin {
   static int LIBUSB_DEFAULT_DEBUG_LEVEL;
   static int LIBUSB_MAX_DEBUG_LEVEL;
 
-  DISALLOW_COPY_AND_ASSIGN(UsbDmxPlugin);
+  UsbDmxPlugin(const UsbDmxPlugin &) = delete;
+  const UsbDmxPlugin &operator=(const UsbDmxPlugin &) = delete;
 };
 }  // namespace usbdmx
 }  // namespace plugin

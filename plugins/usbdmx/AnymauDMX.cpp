@@ -155,7 +155,8 @@ class AnymaAsyncUsbSender : public AsyncUsbSender {
  private:
   uint8_t *m_control_setup_buffer;
 
-  DISALLOW_COPY_AND_ASSIGN(AnymaAsyncUsbSender);
+  AnymaAsyncUsbSender(const AnymaAsyncUsbSender &) = delete;
+  const AnymaAsyncUsbSender &operator=(const AnymaAsyncUsbSender &) = delete;
 };
 
 // AsynchronousAnymauDMX

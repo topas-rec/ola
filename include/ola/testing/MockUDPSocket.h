@@ -160,7 +160,8 @@ class MockUDPSocket: public ola::network::UDPSocketInterface {
   uint8_t* IOQueueToBuffer(ola::io::IOQueue *ioqueue,
                            unsigned int *size) const;
 
-  DISALLOW_COPY_AND_ASSIGN(MockUDPSocket);
+  MockUDPSocket(const MockUDPSocket &) = delete;
+  const MockUDPSocket &operator=(const MockUDPSocket &) = delete;
 };
 
 
@@ -179,7 +180,8 @@ class SocketVerifier {
  private:
   MockUDPSocket *m_socket;
 
-  DISALLOW_COPY_AND_ASSIGN(SocketVerifier);
+  SocketVerifier(const SocketVerifier &) = delete;
+  const SocketVerifier &operator=(const SocketVerifier &) = delete;
 };
 }  // namespace testing
 }  // namespace ola

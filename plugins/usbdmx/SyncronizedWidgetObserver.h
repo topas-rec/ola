@@ -88,7 +88,8 @@ class SyncronizedWidgetObserver : public WidgetObserver {
   template<typename WidgetClass>
   void HandleNewWidget(WidgetClass *widget, AddFuture *f);
 
-  DISALLOW_COPY_AND_ASSIGN(SyncronizedWidgetObserver);
+  SyncronizedWidgetObserver(const SyncronizedWidgetObserver &) = delete;
+  const SyncronizedWidgetObserver &operator=(const SyncronizedWidgetObserver &) = delete;
 };
 }  // namespace usbdmx
 }  // namespace plugin

@@ -102,7 +102,8 @@ class OPCClient {
   void NewData();
   void SocketClosed();
 
-  DISALLOW_COPY_AND_ASSIGN(OPCClient);
+  OPCClient(const OPCClient &) = delete;
+  const OPCClient &operator=(const OPCClient &) = delete;
 };
 }  // namespace openpixelcontrol
 }  // namespace plugin

@@ -61,7 +61,8 @@ class GPIOPlugin: public ola::Plugin {
   static const char PLUGIN_NAME[];
   static const char PLUGIN_PREFIX[];
 
-  DISALLOW_COPY_AND_ASSIGN(GPIOPlugin);
+  GPIOPlugin(const GPIOPlugin &) = delete;
+  const GPIOPlugin &operator=(const GPIOPlugin &) = delete;
 };
 }  // namespace gpio
 }  // namespace plugin

@@ -68,7 +68,8 @@ class SynchronousVellemanK8062: public VellemanK8062 {
  private:
   std::auto_ptr<class VellemanThreadedSender> m_sender;
 
-  DISALLOW_COPY_AND_ASSIGN(SynchronousVellemanK8062);
+  SynchronousVellemanK8062(const SynchronousVellemanK8062 &) = delete;
+  const SynchronousVellemanK8062 &operator=(const SynchronousVellemanK8062 &) = delete;
 };
 
 /**
@@ -91,7 +92,8 @@ class AsynchronousVellemanK8062 : public VellemanK8062 {
  private:
   std::auto_ptr<class VellemanAsyncUsbSender> m_sender;
 
-  DISALLOW_COPY_AND_ASSIGN(AsynchronousVellemanK8062);
+  AsynchronousVellemanK8062(const AsynchronousVellemanK8062 &) = delete;
+  const AsynchronousVellemanK8062 &operator=(const AsynchronousVellemanK8062 &) = delete;
 };
 }  // namespace usbdmx
 }  // namespace plugin

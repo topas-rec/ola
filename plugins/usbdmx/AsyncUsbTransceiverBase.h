@@ -140,7 +140,8 @@ class AsyncUsbTransceiverBase {
   ola::thread::Mutex m_mutex;
 
  private:
-  DISALLOW_COPY_AND_ASSIGN(AsyncUsbTransceiverBase);
+  AsyncUsbTransceiverBase(const AsyncUsbTransceiverBase &) = delete;
+  const AsyncUsbTransceiverBase &operator=(const AsyncUsbTransceiverBase &) = delete;
 };
 }  // namespace usbdmx
 }  // namespace plugin

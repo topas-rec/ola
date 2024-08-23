@@ -44,7 +44,8 @@ class DynamicPluginLoader: public PluginLoader {
 
   std::vector<class AbstractPlugin*> m_plugins;
 
-  DISALLOW_COPY_AND_ASSIGN(DynamicPluginLoader);
+  DynamicPluginLoader(const DynamicPluginLoader &) = delete;
+  const DynamicPluginLoader &operator=(const DynamicPluginLoader &) = delete;
 };
 }  // namespace ola
 #endif  // OLAD_DYNAMICPLUGINLOADER_H_

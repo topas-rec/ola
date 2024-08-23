@@ -54,7 +54,8 @@ class UartDmxThread : public ola::thread::Thread {
 
   static const uint32_t DMX_MAB = 16;
 
-  DISALLOW_COPY_AND_ASSIGN(UartDmxThread);
+  UartDmxThread(const UartDmxThread &) = delete;
+  const UartDmxThread &operator=(const UartDmxThread &) = delete;
 };
 }  // namespace uartdmx
 }  // namespace plugin

@@ -88,7 +88,8 @@ class SelectPoller : public PollerInterface {
   void CheckDescriptors(fd_set *r_set, fd_set *w_set);
   bool AddDescriptorsToSet(fd_set *r_set, fd_set *w_set, int *max_sd);
 
-  DISALLOW_COPY_AND_ASSIGN(SelectPoller);
+  SelectPoller(const SelectPoller &) = delete;
+  const SelectPoller &operator=(const SelectPoller &) = delete;
 };
 }  // namespace io
 }  // namespace ola

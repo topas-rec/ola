@@ -90,7 +90,8 @@ class SynchronousAnymauDMX: public AnymauDMX {
  private:
   std::auto_ptr<class AnymaThreadedSender> m_sender;
 
-  DISALLOW_COPY_AND_ASSIGN(SynchronousAnymauDMX);
+  SynchronousAnymauDMX(const SynchronousAnymauDMX &) = delete;
+  const SynchronousAnymauDMX &operator=(const SynchronousAnymauDMX &) = delete;
 };
 
 /**
@@ -115,7 +116,8 @@ class AsynchronousAnymauDMX : public AnymauDMX {
  private:
   std::auto_ptr<class AnymaAsyncUsbSender> m_sender;
 
-  DISALLOW_COPY_AND_ASSIGN(AsynchronousAnymauDMX);
+  AsynchronousAnymauDMX(const AsynchronousAnymauDMX &) = delete;
+  const AsynchronousAnymauDMX &operator=(const AsynchronousAnymauDMX &) = delete;
 };
 }  // namespace usbdmx
 }  // namespace plugin

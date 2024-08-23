@@ -108,7 +108,8 @@ class KQueuePoller : public PollerInterface {
   static const int MAX_EVENTS;
   static const unsigned int MAX_FREE_DESCRIPTORS;
 
-  DISALLOW_COPY_AND_ASSIGN(KQueuePoller);
+  KQueuePoller(const KQueuePoller &) = delete;
+  const KQueuePoller &operator=(const KQueuePoller &) = delete;
 };
 }  // namespace io
 }  // namespace ola

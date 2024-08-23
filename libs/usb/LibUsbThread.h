@@ -165,7 +165,8 @@ class LibUsbHotplugThread : public LibUsbThread {
   libusb_hotplug_callback_fn m_callback_fn;
   void *m_user_data;
 
-  DISALLOW_COPY_AND_ASSIGN(LibUsbHotplugThread);
+  LibUsbHotplugThread(const LibUsbHotplugThread &) = delete;
+  const LibUsbHotplugThread &operator=(const LibUsbHotplugThread &) = delete;
 };
 
 #endif  // HAVE_LIBUSB_HOTPLUG_API
@@ -199,7 +200,8 @@ class LibUsbSimpleThread : public LibUsbThread {
  private:
   unsigned int m_device_count;
 
-  DISALLOW_COPY_AND_ASSIGN(LibUsbSimpleThread);
+  LibUsbSimpleThread(const LibUsbSimpleThread &) = delete;
+  const LibUsbSimpleThread &operator=(const LibUsbSimpleThread &) = delete;
 };
 }  // namespace usb
 }  // namespace ola

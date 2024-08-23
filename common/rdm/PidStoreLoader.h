@@ -123,7 +123,8 @@ class PidStoreLoader {
   static const uint16_t MANUFACTURER_PID_MIN;
   static const uint16_t MANUFACTURER_PID_MAX;
 
-  DISALLOW_COPY_AND_ASSIGN(PidStoreLoader);
+  PidStoreLoader(const PidStoreLoader &) = delete;
+  const PidStoreLoader &operator=(const PidStoreLoader &) = delete;
 };
 }  // namespace rdm
 }  // namespace ola

@@ -154,7 +154,8 @@ class PluginManager {
   bool StartIfSafe(AbstractPlugin *plugin);
   AbstractPlugin* CheckForRunningConflicts(const AbstractPlugin *plugin) const;
 
-  DISALLOW_COPY_AND_ASSIGN(PluginManager);
+  PluginManager(const PluginManager &) = delete;
+  const PluginManager &operator=(const PluginManager &) = delete;
 };
 }  // namespace ola
 #endif  // OLAD_PLUGINMANAGER_H_

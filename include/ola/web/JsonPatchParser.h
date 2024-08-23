@@ -142,7 +142,8 @@ class JsonPatchParser : public JsonParserInterface {
   static const char kCopyOp[];
   static const char kTestOp[];
 
-  DISALLOW_COPY_AND_ASSIGN(JsonPatchParser);
+  JsonPatchParser(const JsonPatchParser &) = delete;
+  const JsonPatchParser &operator=(const JsonPatchParser &) = delete;
 };
 /**@}*/
 }  // namespace web

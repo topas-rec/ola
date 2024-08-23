@@ -75,7 +75,8 @@ class JaRulePortHandle : public ola::rdm::DiscoverableRDMControllerInterface {
 
   static const unsigned int RDM_QUEUE_SIZE = 50;
 
-  DISALLOW_COPY_AND_ASSIGN(JaRulePortHandle);
+  JaRulePortHandle(const JaRulePortHandle &) = delete;
+  const JaRulePortHandle &operator=(const JaRulePortHandle &) = delete;
 };
 }  // namespace usb
 }  // namespace ola

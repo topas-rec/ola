@@ -78,7 +78,8 @@ class DeviceManager {
  private:
     class DeviceManagerImpl *m_impl;
 
-    DISALLOW_COPY_AND_ASSIGN(DeviceManager);
+    DeviceManager(const DeviceManager &) = delete;
+  const DeviceManager &operator=(const DeviceManager &) = delete;
 };
 }  // namespace e133
 }  // namespace ola

@@ -64,7 +64,8 @@ class DMXCProjectsNodleU1Device: public Device {
   std::auto_ptr<class GenericOutputPort> m_out_port;
   std::auto_ptr<class DMXCProjectsNodleU1InputPort> m_in_port;
 
-  DISALLOW_COPY_AND_ASSIGN(DMXCProjectsNodleU1Device);
+  DMXCProjectsNodleU1Device(const DMXCProjectsNodleU1Device &) = delete;
+  const DMXCProjectsNodleU1Device &operator=(const DMXCProjectsNodleU1Device &) = delete;
 };
 }  // namespace usbdmx
 }  // namespace plugin

@@ -344,7 +344,8 @@ class OlaCallbackClient: public ola::rdm::RDMAPIImplInterface {
         const ola::rdm::RDMResponse *response,
         ola::rdm::ResponseStatus *new_status);
 
-    DISALLOW_COPY_AND_ASSIGN(OlaCallbackClient);
+    OlaCallbackClient(const OlaCallbackClient &) = delete;
+  const OlaCallbackClient &operator=(const OlaCallbackClient &) = delete;
 };
 }  // namespace ola
 #endif  // OLA_OLACALLBACKCLIENT_H_

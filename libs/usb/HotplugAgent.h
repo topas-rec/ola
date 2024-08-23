@@ -153,7 +153,8 @@ class HotplugAgent {
   bool HotplugSupported();
   bool ScanUSBDevices();
 
-  DISALLOW_COPY_AND_ASSIGN(HotplugAgent);
+  HotplugAgent(const HotplugAgent &) = delete;
+  const HotplugAgent &operator=(const HotplugAgent &) = delete;
 };
 }  // namespace usb
 }  // namespace ola

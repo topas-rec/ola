@@ -67,7 +67,8 @@ class ConsumerThread: public ola::thread::Thread {
 
   void EmptyQueue();
 
-  DISALLOW_COPY_AND_ASSIGN(ConsumerThread);
+  ConsumerThread(const ConsumerThread &) = delete;
+  const ConsumerThread &operator=(const ConsumerThread &) = delete;
 };
 }  // namespace thread
 }  // namespace ola

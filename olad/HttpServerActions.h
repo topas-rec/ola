@@ -56,7 +56,8 @@ class BaseHttpAction: public Action {
     bool m_failed;
     SingleUseCallback0<void> *m_on_done;
 
-    DISALLOW_COPY_AND_ASSIGN(BaseHttpAction);
+    BaseHttpAction(const BaseHttpAction &) = delete;
+  const BaseHttpAction &operator=(const BaseHttpAction &) = delete;
 };
 
 
@@ -85,7 +86,8 @@ class SetNameAction: public BaseHttpAction {
     std::string m_name;
     bool m_is_fatal;
 
-    DISALLOW_COPY_AND_ASSIGN(SetNameAction);
+    SetNameAction(const SetNameAction &) = delete;
+  const SetNameAction &operator=(const SetNameAction &) = delete;
 };
 
 
@@ -111,7 +113,8 @@ class SetMergeModeAction: public BaseHttpAction {
     unsigned int m_universe;
     client::OlaUniverse::merge_mode m_merge_mode;
 
-    DISALLOW_COPY_AND_ASSIGN(SetMergeModeAction);
+    SetMergeModeAction(const SetMergeModeAction &) = delete;
+  const SetMergeModeAction &operator=(const SetMergeModeAction &) = delete;
 };
 
 
@@ -146,7 +149,8 @@ class PatchPortAction: public BaseHttpAction {
     unsigned int m_universe;
     client::PatchAction m_action;
 
-    DISALLOW_COPY_AND_ASSIGN(PatchPortAction);
+    PatchPortAction(const PatchPortAction &) = delete;
+  const PatchPortAction &operator=(const PatchPortAction &) = delete;
 };
 
 
@@ -175,7 +179,8 @@ class PortPriorityInheritAction: public BaseHttpAction {
     unsigned int m_port;
     client::PortDirection m_direction;
 
-    DISALLOW_COPY_AND_ASSIGN(PortPriorityInheritAction);
+    PortPriorityInheritAction(const PortPriorityInheritAction &) = delete;
+  const PortPriorityInheritAction &operator=(const PortPriorityInheritAction &) = delete;
 };
 
 
@@ -207,7 +212,8 @@ class PortPriorityStaticAction: public BaseHttpAction {
     client::PortDirection m_direction;
     uint8_t m_override_value;
 
-    DISALLOW_COPY_AND_ASSIGN(PortPriorityStaticAction);
+    PortPriorityStaticAction(const PortPriorityStaticAction &) = delete;
+  const PortPriorityStaticAction &operator=(const PortPriorityStaticAction &) = delete;
 };
 }  // namespace ola
 #endif  // OLAD_HTTPSERVERACTIONS_H_

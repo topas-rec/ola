@@ -110,7 +110,8 @@ class AsyncPluginImpl: public PluginImplInterface, public WidgetObserver {
 
   void ShutdownDevice(Device *device, ola::thread::Future<void> *f);
 
-  DISALLOW_COPY_AND_ASSIGN(AsyncPluginImpl);
+  AsyncPluginImpl(const AsyncPluginImpl &) = delete;
+  const AsyncPluginImpl &operator=(const AsyncPluginImpl &) = delete;
 };
 }  // namespace usbdmx
 }  // namespace plugin

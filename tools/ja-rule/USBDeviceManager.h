@@ -121,7 +121,8 @@ class USBDeviceManager {
   void WidgetEvent(EventType event, ola::usb::JaRuleWidget* widget,
                    ola::thread::Future<void>* f);
 
-  DISALLOW_COPY_AND_ASSIGN(USBDeviceManager);
+  USBDeviceManager(const USBDeviceManager &) = delete;
+  const USBDeviceManager &operator=(const USBDeviceManager &) = delete;
 };
 
 #endif  // TOOLS_JA_RULE_USBDEVICEMANAGER_H_

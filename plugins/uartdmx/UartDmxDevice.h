@@ -66,7 +66,8 @@ class UartDmxDevice : public Device {
   static const unsigned int DEFAULT_BREAK;
   static const char K_BREAK[];
 
-  DISALLOW_COPY_AND_ASSIGN(UartDmxDevice);
+  UartDmxDevice(const UartDmxDevice &) = delete;
+  const UartDmxDevice &operator=(const UartDmxDevice &) = delete;
 };
 }  // namespace uartdmx
 }  // namespace plugin

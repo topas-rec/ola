@@ -78,7 +78,8 @@ class SocketCloser {
  private:
   int m_fd;
 
-  DISALLOW_COPY_AND_ASSIGN(SocketCloser);
+  SocketCloser(const SocketCloser &) = delete;
+  const SocketCloser &operator=(const SocketCloser &) = delete;
 };
 /**
  * @}

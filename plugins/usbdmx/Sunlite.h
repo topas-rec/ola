@@ -68,7 +68,8 @@ class SynchronousSunlite: public Sunlite {
  private:
   std::auto_ptr<class SunliteThreadedSender> m_sender;
 
-  DISALLOW_COPY_AND_ASSIGN(SynchronousSunlite);
+  SynchronousSunlite(const SynchronousSunlite &) = delete;
+  const SynchronousSunlite &operator=(const SynchronousSunlite &) = delete;
 };
 
 /**
@@ -91,7 +92,8 @@ class AsynchronousSunlite: public Sunlite {
  private:
   std::auto_ptr<class SunliteAsyncUsbSender> m_sender;
 
-  DISALLOW_COPY_AND_ASSIGN(AsynchronousSunlite);
+  AsynchronousSunlite(const AsynchronousSunlite &) = delete;
+  const AsynchronousSunlite &operator=(const AsynchronousSunlite &) = delete;
 };
 }  // namespace usbdmx
 }  // namespace plugin

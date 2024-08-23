@@ -58,7 +58,8 @@ class JaRuleFactory : public BaseWidgetFactory<ola::usb::JaRuleWidget> {
   static const uint16_t PRODUCT_ID;
   static const uint16_t VENDOR_ID;
 
-  DISALLOW_COPY_AND_ASSIGN(JaRuleFactory);
+  JaRuleFactory(const JaRuleFactory &) = delete;
+  const JaRuleFactory &operator=(const JaRuleFactory &) = delete;
 };
 }  // namespace usbdmx
 }  // namespace plugin

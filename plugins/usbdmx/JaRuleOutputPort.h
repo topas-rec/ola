@@ -79,7 +79,8 @@ class JaRuleOutputPort: public BasicOutputPort {
   ola::usb::JaRuleWidget *m_widget;  // not owned
   ola::usb::JaRulePortHandle *m_port_handle;  // not owned
 
-  DISALLOW_COPY_AND_ASSIGN(JaRuleOutputPort);
+  JaRuleOutputPort(const JaRuleOutputPort &) = delete;
+  const JaRuleOutputPort &operator=(const JaRuleOutputPort &) = delete;
 };
 }  // namespace usbdmx
 }  // namespace plugin

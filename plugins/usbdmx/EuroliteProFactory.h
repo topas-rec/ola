@@ -52,7 +52,8 @@ class EuroliteProFactory : public BaseWidgetFactory<class EurolitePro> {
   static const char EXPECTED_PRODUCT[];
 
 
-  DISALLOW_COPY_AND_ASSIGN(EuroliteProFactory);
+  EuroliteProFactory(const EuroliteProFactory &) = delete;
+  const EuroliteProFactory &operator=(const EuroliteProFactory &) = delete;
 };
 }  // namespace usbdmx
 }  // namespace plugin

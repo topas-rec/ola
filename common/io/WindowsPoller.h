@@ -90,7 +90,8 @@ class WindowsPoller : public PollerInterface {
   void HandleWakeup(class PollData* data);
   void FinalCheckIOs(std::vector<class PollData*> data);
 
-  DISALLOW_COPY_AND_ASSIGN(WindowsPoller);
+  WindowsPoller(const WindowsPoller &) = delete;
+  const WindowsPoller &operator=(const WindowsPoller &) = delete;
 };
 }  // namespace io
 }  // namespace ola

@@ -55,7 +55,8 @@ class ScanlimeFadecandyFactory
   static const uint16_t PRODUCT_ID;
   static const uint16_t VENDOR_ID;
 
-  DISALLOW_COPY_AND_ASSIGN(ScanlimeFadecandyFactory);
+  ScanlimeFadecandyFactory(const ScanlimeFadecandyFactory &) = delete;
+  const ScanlimeFadecandyFactory &operator=(const ScanlimeFadecandyFactory &) = delete;
 };
 }  // namespace usbdmx
 }  // namespace plugin

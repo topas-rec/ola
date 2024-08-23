@@ -74,7 +74,8 @@ class PeriodicThread : private Thread {
   ola::thread::Mutex m_mutex;
   ola::thread::ConditionVariable m_condition;
 
-  DISALLOW_COPY_AND_ASSIGN(PeriodicThread);
+  PeriodicThread(const PeriodicThread &) = delete;
+  const PeriodicThread &operator=(const PeriodicThread &) = delete;
 };
 }  // namespace thread
 }  // namespace ola

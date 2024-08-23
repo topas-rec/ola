@@ -222,7 +222,8 @@ class SelectServer: public SelectServerInterface {
 
   friend class ::SelectServerTest;
 
-  DISALLOW_COPY_AND_ASSIGN(SelectServer);
+  SelectServer(const SelectServer &) = delete;
+  const SelectServer &operator=(const SelectServer &) = delete;
 };
 }  // namespace io
 }  // namespace ola

@@ -177,7 +177,8 @@ class StreamingClient : public StreamingClientInterface {
 
   bool Send(unsigned int universe, uint8_t priority, const DmxBuffer &data);
 
-  DISALLOW_COPY_AND_ASSIGN(StreamingClient);
+  StreamingClient(const StreamingClient &) = delete;
+  const StreamingClient &operator=(const StreamingClient &) = delete;
 };
 }  // namespace client
 }  // namespace ola

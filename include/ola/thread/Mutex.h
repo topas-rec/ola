@@ -52,7 +52,8 @@ class Mutex {
  private:
     pthread_mutex_t m_mutex;
 
-    DISALLOW_COPY_AND_ASSIGN(Mutex);
+    Mutex(const Mutex &) = delete;
+  const Mutex &operator=(const Mutex &) = delete;
 };
 
 
@@ -71,7 +72,8 @@ class MutexLocker {
     Mutex *m_mutex;
     bool m_requires_unlock;
 
-    DISALLOW_COPY_AND_ASSIGN(MutexLocker);
+    MutexLocker(const MutexLocker &) = delete;
+  const MutexLocker &operator=(const MutexLocker &) = delete;
 };
 
 
@@ -92,7 +94,8 @@ class ConditionVariable {
  private:
     pthread_cond_t m_condition;
 
-    DISALLOW_COPY_AND_ASSIGN(ConditionVariable);
+    ConditionVariable(const ConditionVariable &) = delete;
+  const ConditionVariable &operator=(const ConditionVariable &) = delete;
 };
 }  // namespace thread
 }  // namespace ola

@@ -171,7 +171,8 @@ class JaRuleWidget {
   static const uint8_t SUBCLASS_VALUE = 0xff;
   static const uint8_t PROTOCOL_VALUE = 0xff;
 
-  DISALLOW_COPY_AND_ASSIGN(JaRuleWidget);
+  JaRuleWidget(const JaRuleWidget &) = delete;
+  const JaRuleWidget &operator=(const JaRuleWidget &) = delete;
 };
 }  // namespace usb
 }  // namespace ola

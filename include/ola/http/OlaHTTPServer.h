@@ -79,7 +79,8 @@ class OlaHTTPServer {
     int DisplayDebug(const HTTPRequest *request, HTTPResponse *response);
     int DisplayHandlers(const HTTPRequest *request, HTTPResponse *response);
 
-    DISALLOW_COPY_AND_ASSIGN(OlaHTTPServer);
+    OlaHTTPServer(const OlaHTTPServer &) = delete;
+  const OlaHTTPServer &operator=(const OlaHTTPServer &) = delete;
 };
 }  // namespace http
 }  // namespace ola

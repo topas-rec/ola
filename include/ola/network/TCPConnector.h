@@ -117,7 +117,8 @@ class TCPConnector {
   void TimeoutEvent(class PendingTCPConnection *connection);
   void CleanUpOrphans();
 
-  DISALLOW_COPY_AND_ASSIGN(TCPConnector);
+  TCPConnector(const TCPConnector &) = delete;
+  const TCPConnector &operator=(const TCPConnector &) = delete;
 };
 }  // namespace network
 }  // namespace ola

@@ -116,7 +116,8 @@ class SchemaParser : public JsonParserInterface {
   template <typename T>
   void HandleNumber(T t);
 
-  DISALLOW_COPY_AND_ASSIGN(SchemaParser);
+  SchemaParser(const SchemaParser &) = delete;
+  const SchemaParser &operator=(const SchemaParser &) = delete;
 };
 }  // namespace web
 }  // namespace ola

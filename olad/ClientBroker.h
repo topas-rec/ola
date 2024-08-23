@@ -105,7 +105,8 @@ class ClientBroker {
                          ola::rdm::RDMDiscoveryCallback *on_complete,
                          const ola::rdm::UIDSet &uids);
 
-  DISALLOW_COPY_AND_ASSIGN(ClientBroker);
+  ClientBroker(const ClientBroker &) = delete;
+  const ClientBroker &operator=(const ClientBroker &) = delete;
 };
 }  // namespace ola
 #endif  // OLAD_CLIENTBROKER_H_

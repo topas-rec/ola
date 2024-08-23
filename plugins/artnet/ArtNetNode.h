@@ -652,7 +652,8 @@ class ArtNetNodeImpl {
   // How long to wait for a response to an RDM Request
   static const unsigned int RDM_REQUEST_TIMEOUT_MS = 2000;
 
-  DISALLOW_COPY_AND_ASSIGN(ArtNetNodeImpl);
+  ArtNetNodeImpl(const ArtNetNodeImpl &) = delete;
+  const ArtNetNodeImpl &operator=(const ArtNetNodeImpl &) = delete;
 };
 
 
@@ -686,7 +687,8 @@ class ArtNetNodeImplRDMWrapper
   ArtNetNodeImpl *m_impl;
   uint8_t m_port_id;
 
-  DISALLOW_COPY_AND_ASSIGN(ArtNetNodeImplRDMWrapper);
+  ArtNetNodeImplRDMWrapper(const ArtNetNodeImplRDMWrapper &) = delete;
+  const ArtNetNodeImplRDMWrapper &operator=(const ArtNetNodeImplRDMWrapper &) = delete;
 };
 
 
@@ -854,7 +856,8 @@ class ArtNetNode {
    */
   bool CheckInputPortId(uint8_t port_id);
 
-  DISALLOW_COPY_AND_ASSIGN(ArtNetNode);
+  ArtNetNode(const ArtNetNode &) = delete;
+  const ArtNetNode &operator=(const ArtNetNode &) = delete;
 };
 }  // namespace artnet
 }  // namespace plugin

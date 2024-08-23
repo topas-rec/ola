@@ -75,7 +75,8 @@ class Version {
                         unsigned int revision);
 
  private:
-  DISALLOW_COPY_AND_ASSIGN(Version);
+  Version(const Version &) = delete;
+  const Version &operator=(const Version &) = delete;
 };
 }  // namespace base
 }  // namespace ola
